@@ -1,0 +1,77 @@
+<!-- Recipe Catalog View Template -->
+<div class="recipes-view">
+
+  <!-- Header & Search -->
+  <div style="background: #FFFFFF; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border); margin-bottom: 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+      <div>
+        <h1 style="font-size: 2rem; color: var(--text-main);"><i class="fa-solid fa-book-open" style="color: var(--primary);"></i> Authentic Tamil Nadu Recipe Catalog</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Explore traditional breakfast, lunch, Chettinad regional dishes, snacks & modern Tamil fusion</p>
+      </div>
+      <button class="btn btn-sm btn-outline" ng-click="vm.resetFilters()"><i class="fa-solid fa-rotate-left"></i> Reset All Filters</button>
+    </div>
+
+    <!-- Search Input -->
+    <div style="position: relative; margin-bottom: 1.5rem;">
+      <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); color: #94A3B8; font-size: 1.1rem;"></i>
+      <input type="text" ng-model="vm.searchQuery" class="form-control" placeholder="Search by recipe name, Tamil name, or ingredient (e.g. Sambar, Chettinad, Idli, Coconut)..." style="width: 100%; padding: 0.9rem 1rem 0.9rem 3rem; font-size: 1rem; border-radius: var(--radius-pill); border: 1px solid var(--border); outline: none; box-shadow: var(--shadow-sm);">
+    </div>
+
+    <!-- Multi-Filter Toolbar -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+      <!-- Region Filter -->
+      <div>
+        <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">REGIONAL SPECIALTY</label>
+        <select ng-model="vm.selectedRegion" class="form-control" style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+          <option ng-repeat="r in vm.regions" value="{{r}}">{{r}}</option>
+        </select>
+      </div>
+
+      <!-- Meal Type -->
+      <div>
+        <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">MEAL CATEGORY</label>
+        <select ng-model="vm.selectedMeal" class="form-control" style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+          <option ng-repeat="m in vm.meals" value="{{m}}">{{m}}</option>
+        </select>
+      </div>
+
+      <!-- Diet Filter -->
+      <div>
+        <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">DIETARY TAG</label>
+        <select ng-model="vm.selectedDiet" class="form-control" style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+          <option ng-repeat="d in vm.diets" value="{{d}}">{{d}}</option>
+        </select>
+      </div>
+
+      <!-- Spice Level -->
+      <div>
+        <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">SPICE RATING</label>
+        <select ng-model="vm.selectedSpice" class="form-control" style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+          <option value="All">All Spice Levels</option>
+          <option value="1">Mild (1 Flame)</option>
+          <option value="2">Medium (2 Flames)</option>
+          <option value="3">Spicy (3 Flames)</option>
+          <option value="4">Extra Spicy (4 Flames)</option>
+        </select>
+      </div>
+
+      <!-- Calorie Threshold Slider -->
+      <div>
+        <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">MAX CALORIES: <span style="color: var(--primary);">{{vm.maxCalories}} kcal</span></label>
+        <input type="range" ng-model="vm.maxCalories" min="150" max="800" step="25" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div ng-if="vm.isLoading" style="text-align: center; padding: 4rem;">
+    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2.5rem; color: var(--primary);"></i>
+    <p style="margin-top: 1rem; color: var(--text-muted);">Fetching authentic Tamil recipes...</p>
+  </div>
+
+  <!-- Recipe Card Grid using Custom AngularJS Filters -->
+  <div ng-if="!vm.isLoading" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+    <recipe-card class="recipe-card-repeat" ng-repeat="item in vm.recipes | filter:vm.searchQuery | regionFilter:vm.selectedRegion | mealFilter:vm.selectedMeal | dietFilter:vm.selectedDiet | spiceFilter:vm.selectedSpice | calorieFilter:vm.maxCalories" recipe="item"></recipe-card>
+  </div>
+
+</div>

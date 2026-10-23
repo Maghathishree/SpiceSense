@@ -1,0 +1,253 @@
+<!-- Taste Rescue View Template – Redesigned -->
+<div class="tr-page">
+
+  <!-- ── Hero ── -->
+  <div class="tr-hero">
+    <span class="tr-hero-badge">
+      <i class="fa-solid fa-kit-medical"></i> Signature Emergency Feature
+    </span>
+    <h1 class="tr-hero-title">Taste Rescue ™ &ndash; Smart Culinary Correction Engine</h1>
+    <p class="tr-hero-desc">
+      Did your Sambar turn too salty, your Chettinad curry too fiery, or your Rasam too sour?
+      Don't throw it away! Our rule-based Tamil culinary science engine diagnoses your dish and
+      calculates the exact rescue ingredient, calibrated to your servings.
+    </p>
+    <span class="badge badge-traditional" style="font-size: 0.82rem; padding: 0.4rem 0.75rem;">
+      <i class="fa-solid fa-brain"></i> Deterministic Engine
+    </span>
+  </div>
+
+  <!-- Shopping Feedback Alert -->
+  <div class="alert-success-bar" ng-if="shoppingSuccessMsg">
+    <i class="fa-solid fa-cart-circle-check"></i> {{shoppingSuccessMsg}}
+  </div>
+
+  <!-- ── Progress Stepper ── -->
+  <div class="tr-stepper-wrapper">
+    <div class="tr-stepper">
+      <div class="tr-step tr-step--active">
+        <div class="tr-step-icon"><i class="fa-solid fa-bowl-hot"></i></div>
+        <div class="tr-step-label">1. Current Dish</div>
+      </div>
+      <div class="tr-step-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      <div class="tr-step" ng-class="{'tr-step--active': selectedProblem, 'tr-step--done': diagnosisResult}">
+        <div class="tr-step-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="tr-step-label">2. Problem</div>
+      </div>
+      <div class="tr-step-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      <div class="tr-step" ng-class="{'tr-step--active': diagnosisResult}">
+        <div class="tr-step-icon"><i class="fa-solid fa-gears"></i></div>
+        <div class="tr-step-label">3. Rescue Engine</div>
+      </div>
+      <div class="tr-step-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      <div class="tr-step" ng-class="{'tr-step--success': diagnosisResult}">
+        <div class="tr-step-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="tr-step-label">4. Rescued!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEP 1: Identify Dish & Servings ── -->
+  <div class="tr-card">
+    <div class="tr-card-header">
+      <h2 class="tr-section-title">
+        <i class="fa-solid fa-bowl-hot" style="color: var(--primary);"></i>
+        Step 1: Identify Your Current Cooking Dish &amp; Servings
+      </h2>
+    </div>
+
+    <div class="tr-step1-grid">
+      <!-- Left: Recipe selector -->
+      <div>
+        <label class="field-label">Select Recipe Being Cooked</label>
+        <select class="studio-input" ng-model="selectedRecipeId" ng-change="onRecipeSelect()" style="height: 48px;">
+          <option value="">— Choose from SpiceSense Catalog or Custom —</option>
+          <option value="custom">🍳 Other Custom Tamil Dish in My Pot</option>
+          <option ng-repeat="r in allRecipes" value="{{r._id}}">
+            {{r.name}} {{r.tamilName ? '(' + r.tamilName + ')' : ''}} – {{r.category}}
+          </option>
+        </select>
+
+        <!-- Custom dish details -->
+        <div ng-if="isCustomMeal" style="margin-top: 1rem; background: #F8FAFC; border: 1px dashed #CBD5E1; border-radius: 10px; padding: 1rem;">
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;">
+            <div>
+              <label class="field-label" style="font-size: 0.82rem;">Custom Dish Name</label>
+              <input type="text" class="studio-input" ng-model="customDishName" ng-change="onRecipeSelect()" placeholder="e.g. Tomato Thokku, Poondu Kuzhambu" style="height: 44px;">
+            </div>
+            <div>
+              <label class="field-label" style="font-size: 0.82rem;">Dish Type</label>
+              <select class="studio-input" ng-model="customCategory" ng-change="onRecipeSelect()" style="height: 44px;">
+                <option value="Lunch">Gravy / Kuzhambu / Dal</option>
+                <option value="Snacks">Dry Fry / Poriyal / Sukka</option>
+                <option value="Breakfast">Tiffin / Chutney / Sambhar</option>
+                <option value="Sweets">Payasam / Sweet</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Servings -->
+      <div class="tr-servings-col">
+        <label class="field-label">Current Servings (Scale factor)</label>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <input type="number" min="1" max="25" class="studio-input"
+            ng-model="servings" ng-change="onServingsChange()"
+            style="width: 90px; height: 48px; text-align: center; font-size: 1.15rem; font-weight: 700;">
+          <span style="color: #64748B; font-size: 0.9rem;">person{{servings > 1 ? 's' : ''}} eating</span>
+        </div>
+        <small style="display: block; margin-top: 0.5rem; font-size: 0.82rem; color: #94A3B8; line-height: 1.4;">
+          Correction quantities automatically calibrate to this serving size.
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEP 2: Problem Selection Cards ── -->
+  <div class="tr-card">
+    <div class="tr-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h2 class="tr-section-title" style="color: #E11D48;">
+          <i class="fa-solid fa-triangle-exclamation"></i> Step 2: What Went Wrong in Your Pan?
+        </h2>
+        <p style="font-size: 0.87rem; color: #64748B; margin: 0.2rem 0 0 0;">Click the taste imbalance that needs immediate culinary rescue</p>
+      </div>
+      <button class="btn btn-sm btn-outline" ng-if="selectedProblem" ng-click="resetRescue()" style="flex-shrink: 0;">
+        <i class="fa-solid fa-rotate-left"></i> Reset
+      </button>
+    </div>
+
+    <div class="tr-problem-grid">
+      <div ng-repeat="prob in tasteProblems"
+           ng-click="selectProblem(prob)"
+           class="tr-problem-card"
+           ng-class="{'tr-problem-card--selected': selectedProblem.id === prob.id}"
+           ng-style="selectedProblem.id === prob.id ? {'border-color': prob.color, 'box-shadow': '0 4px 14px rgba(0,0,0,0.1)'} : {}">
+        <div class="tr-prob-icon" ng-style="{'background': prob.color}">
+          <i class="fa-solid {{prob.icon}}"></i>
+        </div>
+        <div class="tr-prob-content">
+          <h4 class="tr-prob-title">{{prob.name}}</h4>
+          <p class="tr-prob-desc">{{prob.desc}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEP 3 & 4: Rescue Results ── -->
+  <div ng-if="diagnosisResult" class="rescue-results-container" style="animation: fadeIn 0.4s ease-in-out;">
+
+    <!-- Correction Strategy Banner -->
+    <div class="tr-card tr-rescue-banner">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+        <div>
+          <span class="badge" style="background: #16A34A; color: #FFF; font-weight: 700; margin-bottom: 0.4rem;">
+            <i class="fa-solid fa-sparkles"></i> Deterministic Rescue Prescribed
+          </span>
+          <h2 style="font-size: 1.5rem; color: #1E293B; margin: 0.3rem 0 0 0;">
+            {{diagnosisResult.recommendation.title}}
+          </h2>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 0.82rem; color: #64748B;">Target Servings:</div>
+          <div style="font-size: 1.15rem; font-weight: 700; color: var(--primary);">
+            {{diagnosisResult.updatedServings}} Servings
+          </div>
+        </div>
+      </div>
+
+      <!-- Rescue Action Card -->
+      <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <div style="background: #16A34A; color: #FFF; padding: 0.75rem 1rem; border-radius: 8px; text-align: center; min-width: 130px; flex-shrink: 0;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85;">Add Exact Qty</div>
+            <div style="font-size: 1.35rem; font-weight: 800; line-height: 1.2;">
+              {{diagnosisResult.recommendation.suggestedQuantity}} {{diagnosisResult.recommendation.unit}}
+            </div>
+          </div>
+          <div style="flex: 1; min-width: 180px;">
+            <div style="font-size: 0.82rem; color: #166534; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px;">Rescue Ingredient to Add:</div>
+            <div style="font-size: 1.2rem; font-weight: 700; color: #14532D; margin: 0.2rem 0;">
+              {{diagnosisResult.recommendation.ingredientToAdd}}
+            </div>
+            <div style="font-size: 0.88rem; color: #166534;">{{diagnosisResult.recommendation.expectedEffect}}</div>
+          </div>
+          <div>
+            <button class="btn btn-accent" ng-click="addRescueIngredientToShopping()" style="background: #16A34A; color: #FFF; white-space: nowrap;">
+              <i class="fa-solid fa-cart-plus"></i> Add Fix to Shopping List
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paati's Science -->
+      <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+        <div style="display: flex; gap: 0.75rem;">
+          <div style="font-size: 1.35rem; color: #D97706; flex-shrink: 0;"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <h4 style="margin: 0 0 0.3rem 0; font-size: 0.92rem; color: #92400E; font-weight: 700;">Culinary Science &amp; Paati's Food Principle</h4>
+            <p style="margin: 0; font-size: 0.85rem; color: #78350F; line-height: 1.5;">{{diagnosisResult.recommendation.reason}}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step-by-step recovery -->
+      <div style="margin-bottom: 1.25rem;">
+        <h4 style="color: #334155; font-size: 1rem; margin-bottom: 0.65rem;">
+          <i class="fa-solid fa-list-check" style="color: var(--primary);"></i> How to Execute the Rescue on the Stove:
+        </h4>
+        <ol style="margin: 0; padding-left: 1.35rem; display: grid; gap: 0.45rem;">
+          <li ng-repeat="step in diagnosisResult.recommendation.stepInstructions track by $index" style="color: #334155; font-size: 0.88rem; line-height: 1.5;">
+            <strong>Step {{$index + 1}}:</strong> {{step}}
+          </li>
+        </ol>
+      </div>
+
+      <!-- Before / After comparison -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #E2E8F0;">
+        <div style="background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 10px; padding: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+            <span class="badge" style="background: #E11D48; color: #FFF; font-weight: 700; font-size: 0.78rem;">BEFORE RESCUE</span>
+            <small style="color: #9F1239; font-weight: 600; font-size: 0.78rem;">Defective State</small>
+          </div>
+          <div style="display: grid; gap: 0.35rem; font-size: 0.84rem; color: #881337;">
+            <div><strong>Taste Issue:</strong> {{diagnosisResult.problem.name}}</div>
+            <div ng-if="diagnosisResult.recommendation.beforeSpice"><strong>Perceived Heat:</strong> {{diagnosisResult.recommendation.beforeSpice}}</div>
+            <div><strong>Yield:</strong> {{diagnosisResult.currentServings}} Servings</div>
+            <div><strong>Balance:</strong> Heavily skewed, harsh mouthfeel</div>
+          </div>
+        </div>
+        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+            <span class="badge" style="background: #16A34A; color: #FFF; font-weight: 700; font-size: 0.78rem;">AFTER RESCUE</span>
+            <small style="color: #166534; font-weight: 600; font-size: 0.78rem;">Corrected &amp; Balanced</small>
+          </div>
+          <div style="display: grid; gap: 0.35rem; font-size: 0.84rem; color: #14532D;">
+            <div><strong>Taste Quality:</strong> Harmonious &amp; Authentic Tamil Profile</div>
+            <div ng-if="diagnosisResult.recommendation.afterSpice"><strong>Perceived Heat:</strong> {{diagnosisResult.recommendation.afterSpice}}</div>
+            <div><strong>Updated Yield:</strong> {{diagnosisResult.updatedServings}} Servings</div>
+            <div><strong>Calorie Shift:</strong> {{diagnosisResult.calculatedNutrition.perServing.calories}} kcal / serving</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+        <button class="btn btn-outline" ng-click="sendToLeftoverLab()">
+          <i class="fa-solid fa-flask-vial"></i> Send Dish to Leftover Lab
+        </button>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button class="btn" ng-click="addRescueIngredientToShopping()" style="background: #16A34A; color: #FFF;">
+            <i class="fa-solid fa-cart-shopping"></i> Add Fix to Shopping List
+          </button>
+          <a ng-if="selectedRecipe && selectedRecipe._id" ng-href="#!/recipes/{{selectedRecipe._id}}" class="btn btn-primary">
+            <i class="fa-solid fa-arrow-right"></i> Back to Recipe Card
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

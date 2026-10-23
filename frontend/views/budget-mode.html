@@ -1,0 +1,60 @@
+<!-- Budget Mode View Template -->
+<div class="budget-mode-view">
+
+  <div style="background: #FFFFFF; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border); margin-bottom: 2rem;">
+    <h1 style="font-size: 2rem; color: var(--text-main); margin-bottom: 0.5rem;"><i class="fa-solid fa-wallet" style="color: var(--accent);"></i> "Cook Under My Budget" Solver</h1>
+    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Enter your target budget and number of diners to view matching delicious Tamil recipes.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 180px; gap: 1.5rem; align-items: flex-end;">
+      <div>
+        <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">TOTAL BUDGET: <span style="color: var(--accent); font-weight: 800;">&#8377;{{vm.budgetLimit}}</span></label>
+        <input type="range" ng-model="vm.budgetLimit" ng-change="vm.runBudgetCalculation()" min="40" max="350" step="10" style="width: 100%;">
+      </div>
+
+      <div>
+        <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">NUMBER OF PEOPLE: <span style="color: var(--primary); font-weight: 800;">{{vm.peopleCount}} diners</span></label>
+        <input type="range" ng-model="vm.peopleCount" ng-change="vm.runBudgetCalculation()" min="1" max="8" step="1" style="width: 100%;">
+      </div>
+
+      <button class="btn btn-accent" ng-click="vm.runBudgetCalculation()"><i class="fa-solid fa-calculator"></i> Calculate</button>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div ng-if="vm.isCalculating" style="text-align: center; padding: 3rem;">
+    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2.5rem; color: var(--accent);"></i>
+  </div>
+
+  <!-- Budget Results Grid -->
+  <div ng-if="!vm.isCalculating" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
+    <div ng-repeat="item in vm.budgetResults" style="background: #FFFFFF; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border); display: flex; flex-direction: column;">
+      <div style="position: relative; height: 170px;">
+        <img ng-src="{{item.recipe.imageUrl}}" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 12px; right: 12px; background: rgba(21, 128, 61, 0.95); color: #FFFFFF; padding: 0.35rem 0.75rem; border-radius: var(--radius-pill); font-weight: 800; font-size: 0.85rem;">
+          Save &#8377;{{item.savings}}
+        </div>
+      </div>
+
+      <div style="padding: 1.25rem; display: flex; flex-direction: column; flex: 1;">
+        <h3 style="font-size: 1.15rem; color: var(--text-main); margin-bottom: 0.35rem;">{{item.recipe.name}}</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">{{item.recipe.description}}</p>
+
+        <div style="background: var(--bg-alt); padding: 0.85rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+            <span>Cost for {{vm.peopleCount}} people:</span>
+            <strong style="color: var(--accent);">&#8377;{{item.totalCostForPeople}}</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>Cost per serving:</span>
+            <strong>&#8377;{{item.costPerPerson}} / plate</strong>
+          </div>
+        </div>
+
+        <div style="margin-top: auto;">
+          <a ng-href="#!/recipes/{{item.recipe._id}}" class="btn btn-sm btn-accent" style="width: 100%;">View Recipe & Ingredients</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,72 @@
+<!-- What Can I Cook? View Template -->
+<div class="what-can-i-cook-view">
+
+  <!-- Header -->
+  <div style="background: #FFFFFF; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border); margin-bottom: 2rem;">
+    <h1 style="font-size: 2rem; color: var(--text-main); margin-bottom: 0.5rem;"><i class="fa-solid fa-kitchen-set" style="color: var(--primary);"></i> "What Can I Cook?" Pantry Finder</h1>
+    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select the ingredients available in your kitchen. Our matching engine will score recipes by compatibility (% match).</p>
+
+    <!-- Interactive Ingredient Selector Directive (<ingredient-selector>) -->
+    <ingredient-selector selected-ingredients="vm.selectedIngredients" on-change="vm.runIngredientSearch()"></ingredient-selector>
+  </div>
+
+  <!-- Results Header & Sort Controls -->
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+    <h3 style="font-size: 1.4rem; color: var(--text-main);">
+      Matching Recipes ({{vm.matchedResults.length}})
+    </h3>
+
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
+      <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">SORT BY:</span>
+      <select ng-model="vm.sortBy" ng-change="vm.sortResults()" class="form-control" style="padding: 0.45rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border); font-weight: 600;">
+        <option value="matchPercentage">Highest Ingredient Match %</option>
+        <option value="fastest">Fastest Cooking Time</option>
+        <option value="lowestCalories">Lowest Calories</option>
+        <option value="highestProtein">Highest Protein</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div ng-if="vm.isSearching" style="text-align: center; padding: 4rem;">
+    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2.5rem; color: var(--primary);"></i>
+    <p style="margin-top: 1rem; color: var(--text-muted);">Matching pantry ingredients against Tamil Nadu recipes...</p>
+  </div>
+
+  <!-- Empty State -->
+  <div ng-if="!vm.isSearching && vm.matchedResults.length === 0" style="background: #FFFFFF; border-radius: var(--radius-lg); padding: 3rem; text-align: center;">
+    <i class="fa-solid fa-basket-shopping" style="font-size: 3rem; color: #94A3B8; margin-bottom: 1rem;"></i>
+    <h3>No matching recipes for selected ingredients</h3>
+    <p style="color: var(--text-muted);">Try selecting more pantry items like Rice, Onions, Tomatoes, or Toor Dal above.</p>
+  </div>
+
+  <!-- Matched Recipe Cards with Score Badge -->
+  <div ng-if="!vm.isSearching" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
+    <div ng-repeat="item in vm.matchedResults" style="background: #FFFFFF; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border); display: flex; flex-direction: column;">
+      <div style="position: relative; height: 180px;">
+        <img ng-src="{{item.recipe.imageUrl}}" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 12px; left: 12px;">
+          <span class="badge" ng-class="item.matchPercentage >= 75 ? 'badge-diet' : (item.matchPercentage >= 50 ? 'badge-traditional' : 'badge-spice')" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">
+            <i class="fa-solid fa-circle-check"></i> {{item.matchPercentage}}% Ingredients Available
+          </span>
+        </div>
+      </div>
+
+      <div style="padding: 1.25rem; display: flex; flex-direction: column; flex: 1;">
+        <h3 style="font-size: 1.15rem; color: var(--text-main); margin-bottom: 0.25rem;">{{item.recipe.name}}</h3>
+        <span style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">Region: {{item.recipe.region}} • {{item.recipe.cookTimeMinutes}} mins</span>
+
+        <div style="margin-bottom: 1rem; font-size: 0.85rem;">
+          <div style="color: var(--accent); margin-bottom: 0.25rem;"><strong>Available ({{item.matchedIngredients.length}}):</strong> {{item.matchedIngredients.join(', ')}}</div>
+          <div style="color: #991B1B;" ng-if="item.missingIngredients.length"><strong>Missing ({{item.missingIngredients.length}}):</strong> {{item.missingIngredients.join(', ')}}</div>
+        </div>
+
+        <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 800; color: var(--primary);">&#8377;{{item.recipe.estimatedCostINR}}</span>
+          <a ng-href="#!/recipes/{{item.recipe._id}}" class="btn btn-sm btn-primary">Cook This Recipe <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

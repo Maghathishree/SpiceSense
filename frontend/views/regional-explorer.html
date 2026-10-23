@@ -1,0 +1,35 @@
+<!-- Regional Explorer View Template -->
+<div class="regional-explorer-view">
+
+  <div style="background: #FFFFFF; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border); margin-bottom: 2rem;">
+    <h1 style="font-size: 2rem; color: var(--text-main); margin-bottom: 0.5rem;"><i class="fa-solid fa-map-location-dot" style="color: var(--primary);"></i> Tamil Nadu Culinary Regional Explorer</h1>
+    <p style="color: var(--text-muted); font-size: 0.95rem;">Journey across Chettinad, Madurai, Tirunelveli, Kongu Nadu, Thanjavur, and Coastal Kanyakumari.</p>
+  </div>
+
+  <!-- Region Selection Chips -->
+  <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem;">
+    <button ng-repeat="(regKey, info) in vm.regionInfoMap" class="btn btn-sm" ng-class="vm.selectedRegion === regKey ? 'btn-primary' : 'btn-outline'" ng-click="vm.loadRegionRecipes(regKey)">
+      <i class="fa-solid fa-location-dot"></i> {{regKey}}
+    </button>
+  </div>
+
+  <!-- Selected Region Highlight Card -->
+  <div style="background: linear-gradient(135deg, #1E293B, #0F172A); padding: 2rem; border-radius: var(--radius-lg); color: #FFFFFF; box-shadow: var(--shadow-lg); margin-bottom: 2rem; border-left: 6px solid var(--primary);">
+    <span class="badge badge-traditional" style="background: var(--primary); color: #FFFFFF; border: none; margin-bottom: 0.75rem;">Selected Region</span>
+    <h2 style="font-size: 1.8rem; color: #FFFFFF; margin-bottom: 0.5rem;">{{vm.regionInfoMap[vm.selectedRegion].title}}</h2>
+    <p style="font-size: 1rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 1rem;">{{vm.regionInfoMap[vm.selectedRegion].description}}</p>
+    <div style="font-size: 0.9rem; color: #FCD34D;">
+      <strong>Signature Dishes:</strong> {{vm.regionInfoMap[vm.selectedRegion].signature}}
+    </div>
+  </div>
+
+  <!-- Regional Recipes Grid -->
+  <div ng-if="vm.isLoading" style="text-align: center; padding: 3rem;">
+    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2.5rem; color: var(--primary);"></i>
+  </div>
+
+  <div ng-if="!vm.isLoading" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+    <recipe-card class="recipe-card-repeat" ng-repeat="item in vm.regionalRecipes" recipe="item"></recipe-card>
+  </div>
+
+</div>

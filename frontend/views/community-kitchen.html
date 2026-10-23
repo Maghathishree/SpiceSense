@@ -1,0 +1,148 @@
+<!-- Community Kitchen View Template – Redesigned -->
+<div class="ck-page">
+
+  <!-- ── Hero Banner ── -->
+  <div class="ck-hero">
+    <div class="ck-hero-content">
+      <span class="ck-hero-badge">
+        <i class="fa-solid fa-users"></i> Community Kitchen
+      </span>
+      <h1 class="ck-hero-title">Tamil Community Creations &amp; Secret Recipes</h1>
+      <p class="ck-hero-desc">
+        Crowdsourced recipes from passionate Tamil home cooks, grandmothers, and culinary innovators.
+        Share yours and inspire the community!
+      </p>
+      <button class="btn btn-primary" ng-click="navigateToAdd()" style="font-size: 0.95rem; padding: 0.7rem 1.5rem;">
+        <i class="fa-solid fa-circle-plus"></i> + Add Your Recipe
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Search & Filter Bar ── -->
+  <div class="ck-filter-bar">
+    <!-- Search -->
+    <div class="ck-search-wrap">
+      <i class="fa-solid fa-magnifying-glass ck-search-icon"></i>
+      <input type="text" class="studio-input ck-search-input"
+        ng-model="searchQuery" ng-change="loadCommunityRecipes()"
+        placeholder="Search community recipes or ingredients...">
+    </div>
+
+    <!-- Category -->
+    <div>
+      <select class="studio-input" ng-model="selectedCategory" ng-change="loadCommunityRecipes()" style="height: 46px;">
+        <option value="All">All Categories</option>
+        <option ng-repeat="cat in categories" ng-if="cat !== 'All'" value="{{cat}}">{{cat}}</option>
+      </select>
+    </div>
+
+    <!-- Region -->
+    <div>
+      <select class="studio-input" ng-model="selectedRegion" ng-change="loadCommunityRecipes()" style="height: 46px;">
+        <option value="All">All Regions</option>
+        <option ng-repeat="reg in regions" ng-if="reg !== 'All'" value="{{reg}}">{{reg}}</option>
+      </select>
+    </div>
+
+    <!-- Classification -->
+    <div>
+      <select class="studio-input" ng-model="selectedClassification" ng-change="loadCommunityRecipes()" style="height: 46px;">
+        <option value="All">All Types</option>
+        <option value="Traditional">Traditional</option>
+        <option value="Modern">Modern</option>
+        <option value="Fusion">Fusion</option>
+      </select>
+    </div>
+
+    <!-- Reset -->
+    <div>
+      <button class="btn btn-outline" ng-click="resetFilters()" style="height: 46px; white-space: nowrap;" title="Reset Filters">
+        <i class="fa-solid fa-rotate-left"></i> Reset
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div ng-if="isLoading" class="text-center" style="padding: 4rem 0;">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="text-muted" style="margin-top: 0.75rem;">Discovering delicious community creations...</p>
+  </div>
+
+  <!-- ── Recipes Grid ── -->
+  <div ng-if="!isLoading && recipes.length > 0">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+      <h3 style="font-size: 1rem; color: #475569; margin: 0; font-weight: 600;">
+        Showing <strong style="color: #1E293B;">{{recipes.length}}</strong>
+        Community Recipe{{recipes.length > 1 ? 's' : ''}}
+      </h3>
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <span style="font-size: 0.82rem; color: #94A3B8;">Sort by:</span>
+        <select class="studio-input" ng-model="sortBy" ng-change="loadCommunityRecipes()"
+          style="height: 36px; font-size: 0.85rem; padding: 0 0.75rem; min-width: 140px;">
+          <option value="createdAt">Latest Shared</option>
+          <option value="rating">Highest Rated</option>
+          <option value="time">Fastest Cook Time</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="recipe-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.35rem;">
+      <div ng-repeat="recipe in recipes track by recipe._id" class="recipe-card-container card" style="overflow: hidden; display: flex; flex-direction: column;">
+        <div class="recipe-card-img-wrapper" style="position: relative; height: 180px; overflow: hidden;">
+          <img ng-src="{{recipe.image || recipe.imageUrl || 'assets/recipes/community-placeholder.jpg'}}" alt="{{recipe.name}}" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; top: 0.65rem; left: 0.65rem; display: flex; gap: 0.35rem;">
+            <span class="badge" style="background: rgba(15, 23, 42, 0.85); color: #FFF; font-size: 0.72rem;">
+              <i class="fa-solid fa-user-circle"></i> @{{recipe.createdBy.username || 'Community Chef'}}
+            </span>
+            <span class="badge" ng-class="recipe.classification === 'Fusion' ? 'badge-fusion' : (recipe.classification === 'Modern' ? 'badge-modern' : 'badge-traditional')" style="font-size: 0.72rem;">
+              {{recipe.classification || 'Traditional'}}
+            </span>
+          </div>
+          <button class="fav-btn-icon" ng-click="onFavorite(recipe)" style="position: absolute; top: 0.65rem; right: 0.65rem; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; color: #EF4444; display: flex; align-items: center; justify-content: center;">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
+
+        <div class="recipe-card-body p-3" style="flex: 1; display: flex; flex-direction: column;">
+          <div style="display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
+            <span class="badge badge-region"><i class="fa-solid fa-location-dot"></i> {{recipe.region}}</span>
+            <span class="badge badge-diet" ng-if="recipe.dietaryTags.length"><i class="fa-solid fa-leaf"></i> {{recipe.dietaryTags[0]}}</span>
+          </div>
+          <h4 class="recipe-card-title m-0" style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.2rem;">{{recipe.name}}</h4>
+          <div class="recipe-card-tamil-title text-muted" ng-if="recipe.tamilName" style="font-size: 0.8rem; margin-bottom: 0.5rem;">{{recipe.tamilName}}</div>
+          <p class="recipe-card-desc text-muted" style="font-size: 0.83rem; line-height: 1.4; flex: 1; margin-bottom: 0.75rem;">
+            {{recipe.description | limitTo: 95}}{{recipe.description.length > 95 ? '...' : ''}}
+          </p>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: #64748B; margin-bottom: 0.75rem;">
+            <div><i class="fa-regular fa-clock" style="color: var(--primary);"></i> {{recipe.cookTimeMinutes}}m</div>
+            <div><i class="fa-solid fa-fire-flame-curved" style="color: var(--secondary);"></i> {{recipe.nutritionPerServing.calories}} kcal</div>
+            <spice-meter level="recipe.spiceLevel"></spice-meter>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.65rem; border-top: 1px solid #F1F5F9;">
+            <div style="font-weight: 700; color: #16A34A; font-size: 0.9rem;">&#8377;{{recipe.estimatedCostINR}} <span style="font-size: 0.72rem; color: #94A3B8; font-weight: normal;">/ batch</span></div>
+            <a ng-href="#!/recipes/{{recipe._id}}" class="btn btn-sm btn-primary" style="font-size: 0.82rem;">
+              View Recipe <i class="fa-solid fa-chevron-right" style="font-size: 0.72rem;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Empty State ── -->
+  <div ng-if="!isLoading && recipes.length === 0" class="ck-empty-state">
+    <div class="ck-empty-icon">
+      <i class="fa-solid fa-bowl-food"></i>
+    </div>
+    <h3 class="ck-empty-title">No Community Recipes Found</h3>
+    <p class="ck-empty-desc">
+      Be the first to share an authentic home secret, grandmother's heirloom recipe, or a delightful modern Tamil twist!
+    </p>
+    <button class="btn btn-outline" ng-click="navigateToAdd()" style="font-size: 0.92rem; padding: 0.6rem 1.4rem;">
+      <i class="fa-solid fa-plus-circle"></i> Share Your First Recipe
+    </button>
+  </div>
+
+</div>

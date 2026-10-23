@@ -1,0 +1,134 @@
+<!-- My Recipes — Chef Studio Dashboard -->
+<div class="mr-page">
+
+  <!-- ── Header Banner ── -->
+  <div class="mr-hero">
+    <div class="mr-hero-left">
+      <span class="mr-hero-badge">
+        <i class="fa-solid fa-user-pen"></i> Chef Studio
+      </span>
+      <h1 class="mr-hero-title">My Recipe Collection</h1>
+      <p class="mr-hero-desc" ng-if="currentUser">
+        Welcome back, <strong>{{currentUser.username}}</strong> — manage your Tamil Nadu culinary creations.
+      </p>
+      <div class="mr-stats" ng-if="!loading && myRecipes.length > 0">
+        <div class="mr-stat">
+          <span class="mr-stat-val">{{myRecipes.length}}</span>
+          <span class="mr-stat-lbl">Recipe{{myRecipes.length > 1 ? 's' : ''}}</span>
+        </div>
+        <div class="mr-stat-divider"></div>
+        <div class="mr-stat">
+          <span class="mr-stat-val">{{totalIngredients()}}</span>
+          <span class="mr-stat-lbl">Ingredients</span>
+        </div>
+        <div class="mr-stat-divider"></div>
+        <div class="mr-stat">
+          <span class="mr-stat-val">{{uniqueRegions()}}</span>
+          <span class="mr-stat-lbl">Region{{uniqueRegions() > 1 ? 's' : ''}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="mr-hero-action">
+      <a href="#!/add-recipe" class="btn btn-primary mr-add-btn">
+        <i class="fa-solid fa-plus-circle"></i> Add New Recipe
+      </a>
+    </div>
+  </div>
+
+  <!-- ── Notifications ── -->
+  <div class="mr-alert mr-alert-error" ng-if="errorMessage">
+    <i class="fa-solid fa-circle-exclamation"></i> {{errorMessage}}
+  </div>
+  <div class="mr-alert mr-alert-success" ng-if="successMessage">
+    <i class="fa-solid fa-circle-check"></i> {{successMessage}}
+  </div>
+
+  <!-- ── Loading State ── -->
+  <div class="mr-loading" ng-if="loading">
+    <div class="mr-loading-spinner"></div>
+    <p>Loading your recipe collection…</p>
+  </div>
+
+  <!-- ── Recipe Grid ── -->
+  <div ng-if="!loading && myRecipes.length > 0">
+    <div class="mr-grid">
+      <div class="mr-card" ng-repeat="recipe in myRecipes track by recipe._id">
+
+        <!-- Card Image -->
+        <div class="mr-card-img">
+          <img ng-src="{{recipe.image || recipe.imageUrl || 'assets/recipes/community-placeholder.jpg'}}" alt="{{recipe.name}}">
+          <div class="mr-card-badges">
+            <span class="mr-badge mr-badge-region">
+              <i class="fa-solid fa-location-dot"></i> {{recipe.region}}
+            </span>
+            <span class="mr-badge"
+              ng-class="recipe.classification === 'Fusion' ? 'mr-badge-fusion' : (recipe.classification === 'Modern' ? 'mr-badge-modern' : 'mr-badge-trad')">
+              {{recipe.classification || 'Traditional'}}
+            </span>
+          </div>
+        </div>
+
+        <!-- Card Body -->
+        <div class="mr-card-body">
+          <a ng-href="#!/recipes/{{recipe._id}}" class="mr-card-title">{{recipe.name}}</a>
+          <div class="mr-card-tamil" ng-if="recipe.tamilName">{{recipe.tamilName}}</div>
+          <p class="mr-card-desc">
+            {{recipe.description | limitTo: 90}}{{recipe.description.length > 90 ? '...' : ''}}
+          </p>
+
+          <!-- Meta row -->
+          <div class="mr-meta">
+            <span><i class="fa-regular fa-clock" style="color: var(--primary);"></i> {{recipe.cookTimeMinutes}}m</span>
+            <span><i class="fa-solid fa-users" style="color: #64748B;"></i> {{recipe.servings}} servings</span>
+            <span><i class="fa-solid fa-indian-rupee-sign" style="color: #16A34A;"></i> {{recipe.estimatedCostINR}}</span>
+            <span>
+              <i class="fa-solid fa-pepper-hot"
+                ng-style="{'color': recipe.spiceLevel >= 3 ? '#E11D48' : (recipe.spiceLevel === 2 ? '#D97706' : '#64748B')}">
+              </i> {{recipe.spiceLevel}}/5
+            </span>
+          </div>
+
+          <!-- Dietary tags -->
+          <div class="mr-tags" ng-if="recipe.dietaryTags && recipe.dietaryTags.length">
+            <span class="mr-tag" ng-repeat="tag in recipe.dietaryTags | limitTo: 3">{{tag}}</span>
+          </div>
+        </div>
+
+        <!-- Card Footer Actions -->
+        <div class="mr-card-footer">
+          <a ng-href="#!/recipes/{{recipe._id}}" class="mr-action-btn mr-action-view" title="Preview Recipe">
+            <i class="fa-solid fa-eye"></i> View
+          </a>
+          <button type="button" class="mr-action-btn mr-action-edit" ng-click="editRecipe(recipe._id)" title="Edit Recipe">
+            <i class="fa-solid fa-pen-to-square"></i> Edit
+          </button>
+          <button type="button" class="mr-action-btn mr-action-delete" ng-click="deleteRecipe(recipe)" title="Delete Recipe">
+            <i class="fa-solid fa-trash-can"></i> Delete
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Empty State ── -->
+  <div class="mr-empty" ng-if="!loading && myRecipes.length === 0">
+    <div class="mr-empty-icon">
+      <i class="fa-solid fa-kitchen-set"></i>
+    </div>
+    <h3 class="mr-empty-title">Your Recipe Studio is Empty</h3>
+    <p class="mr-empty-desc">
+      You haven't created any recipes yet. Share your family's Sambar secret, a fiery Chettinad curry,
+      or your grandmother's heirloom dessert — every dish has a story!
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="#!/add-recipe" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.95rem;">
+        <i class="fa-solid fa-plus-circle"></i> Create My First Recipe
+      </a>
+      <a href="#!/community-kitchen" class="btn btn-outline" style="padding: 0.7rem 1.5rem; font-size: 0.95rem;">
+        <i class="fa-solid fa-users"></i> Browse Community
+      </a>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,82 @@
+<!-- Leftover Lab View Template -->
+<div class="leftover-lab-view">
+
+  <!-- Header Banner -->
+  <div style="background: linear-gradient(135deg, #1E293B, #0F172A); padding: 2.5rem; border-radius: var(--radius-lg); color: #FFFFFF; box-shadow: var(--shadow-xl); border: 2px solid var(--primary); margin-bottom: 2rem;">
+    <div style="max-width: 800px;">
+      <span class="badge badge-traditional" style="background: var(--primary); color: #FFFFFF; border: none; font-size: 0.85rem; padding: 0.4rem 1rem; margin-bottom: 1rem;">
+        <i class="fa-solid fa-flask"></i> Signature Innovation Feature
+      </span>
+      <h1 style="font-size: 2.5rem; color: #FFFFFF; margin-bottom: 0.5rem;">Leftover Lab Transformation</h1>
+      <p style="font-size: 1.1rem; color: #CBD5E1; line-height: 1.6;">
+        "Cook what you have, understand what you eat, and waste zero food." Enter leftover food items and available pantry ingredients to dynamically transform them into fresh, delicious Tamil dishes!
+      </p>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 340px 1fr; gap: 2rem;">
+
+    <!-- Left Controls Sidebar -->
+    <div>
+      <div style="background: #FFFFFF; border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-md); border: 1px solid var(--border); margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.15rem; color: var(--text-main); margin-bottom: 1rem;"><i class="fa-solid fa-box-archive" style="color: var(--primary);"></i> 1. Select Leftover Item</h3>
+        
+        <!-- Preset Leftovers Buttons -->
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
+          <button ng-repeat="opt in vm.leftoverOptions" class="btn btn-outline" style="justify-content: flex-start; text-align: left;" ng-class="{'btn-primary': vm.selectedLeftover === opt.leftoverItem && !vm.customLeftoverInput}" ng-click="vm.selectLeftoverPreset(opt.leftoverItem)">
+            <i class="fa-solid fa-utensils"></i> {{opt.leftoverItem}}
+          </button>
+        </div>
+
+        <!-- Custom Leftover Input -->
+        <label style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">OR ENTER CUSTOM LEFTOVER</label>
+        <div style="display: flex; gap: 0.5rem;">
+          <input type="text" ng-model="vm.customLeftoverInput" placeholder="e.g. Leftover Dosa Batter, Poori..." class="form-control" style="flex: 1; padding: 0.6rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border); outline: none;">
+          <button class="btn btn-sm btn-primary" ng-click="vm.runMatch()"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Pantry Ingredients Multi-Select -->
+      <div style="background: #FFFFFF; border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-md); border: 1px solid var(--border);">
+        <h3 style="font-size: 1.15rem; color: var(--text-main); margin-bottom: 0.75rem;"><i class="fa-solid fa-kitchen-set" style="color: var(--secondary);"></i> 2. Extra Available Ingredients</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Select what else you have in your fridge:</p>
+
+        <div class="ingredient-chip-group">
+          <div class="chip-item" ng-repeat="ing in vm.pantryIngredients" ng-class="{'selected': vm.selectedPantry.indexOf(ing) !== -1}" ng-click="vm.togglePantryItem(ing)">
+            <i class="fa-solid" ng-class="vm.selectedPantry.indexOf(ing) !== -1 ? 'fa-circle-check' : 'fa-plus'"></i> {{ing}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Results Panel -->
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+        <h2 style="font-size: 1.5rem; color: var(--text-main);">
+          Transformations for <span style="color: var(--primary);">"{{vm.customLeftoverInput || vm.selectedLeftover}}"</span>
+        </h2>
+        <span class="badge badge-traditional" ng-if="vm.suggestions.length">{{vm.suggestions.length}} Recipes Found</span>
+      </div>
+
+      <!-- Loading State -->
+      <div ng-if="vm.isMatching" style="text-align: center; padding: 4rem; background: #FFFFFF; border-radius: var(--radius-lg);">
+        <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2.5rem; color: var(--primary);"></i>
+        <p style="margin-top: 1rem; color: var(--text-muted);">Executing Leftover Matching Engine...</p>
+      </div>
+
+      <!-- No Results -->
+      <div ng-if="!vm.isMatching && vm.suggestions.length === 0 && vm.hasSearched" style="background: #FFFFFF; border-radius: var(--radius-lg); padding: 3rem; text-align: center; box-shadow: var(--shadow-sm);">
+        <i class="fa-solid fa-face-meh" style="font-size: 3rem; color: #94A3B8; margin-bottom: 1rem;"></i>
+        <h3>No direct leftover recipe found</h3>
+        <p style="color: var(--text-muted);">Try selecting additional pantry ingredients like onions, chillies, or curry leaves.</p>
+      </div>
+
+      <!-- Suggested Leftover Cards (<leftover-card>) -->
+      <div ng-if="!vm.isMatching">
+        <leftover-card class="recipe-card-repeat" ng-repeat="item in vm.suggestions" recipe="item" leftover-name="vm.customLeftoverInput || vm.selectedLeftover"></leftover-card>
+      </div>
+    </div>
+
+  </div>
+
+</div>

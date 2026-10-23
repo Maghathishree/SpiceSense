@@ -1,0 +1,47 @@
+<!-- Nutrition Calculator View Template -->
+<div class="nutrition-calculator-view">
+
+  <div style="background: #FFFFFF; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border); margin-bottom: 2rem;">
+    <h1 style="font-size: 2rem; color: var(--text-main); margin-bottom: 0.5rem;"><i class="fa-solid fa-calculator" style="color: var(--primary);"></i> Dynamic Nutrition & Calorie Calculator</h1>
+    <p style="color: var(--text-muted); font-size: 0.95rem;">Select any recipe, customize serving size, add extra ingredients, and observe dynamic macro updates.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+
+    <!-- Left Controls Panel -->
+    <div style="background: #FFFFFF; padding: 1.75rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border);">
+      <div style="margin-bottom: 1.25rem;">
+        <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">SELECT TARGET RECIPE</label>
+        <select ng-model="vm.selectedRecipe" ng-options="r.name for r in vm.recipes" ng-change="vm.recalculate()" class="form-control" style="width: 100%; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border); font-size: 1rem; font-weight: 600;"></select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">ADJUST SERVING SIZE: <span style="color: var(--primary); font-size: 1.1rem; font-weight: 800;">{{vm.servings}} servings</span></label>
+        <input type="range" ng-model="vm.servings" ng-change="vm.recalculate()" min="1" max="12" step="1" style="width: 100%;">
+      </div>
+
+      <div style="border-top: 1px dashed var(--border); padding-top: 1.25rem; margin-top: 1.25rem;">
+        <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.75rem;"><i class="fa-solid fa-plus-circle" style="color: var(--accent);"></i> Add Extra Ingredients (e.g. Cheese, Ghee, Eggs)</h4>
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+          <input type="text" ng-model="vm.newAddName" placeholder="Ingredient name (e.g. Extra Ghee)..." class="form-control" style="flex: 1; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+          <input type="number" ng-model="vm.newAddQty" placeholder="Qty" min="1" max="5" class="form-control" style="width: 70px; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+          <button class="btn btn-sm btn-accent" ng-click="vm.addCustomIngredient()">Add</button>
+        </div>
+
+        <ul style="list-style: none;">
+          <li ng-repeat="item in vm.customAdditions track by $index" style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: var(--bg-alt); border-radius: var(--radius-sm); margin-bottom: 0.4rem;">
+            <span>{{item.name}} (x{{item.quantityMultiplier}})</span>
+            <button ng-click="vm.removeCustomIngredient($index)" style="background: none; border: none; color: #991B1B; cursor: pointer;">&times;</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Dynamic Nutrition Card Component (<nutrition-card>) -->
+    <div>
+      <nutrition-card nutrition="vm.selectedRecipe.nutritionPerServing" servings="vm.servings" base-servings="vm.selectedRecipe.servings"></nutrition-card>
+    </div>
+
+  </div>
+
+</div>

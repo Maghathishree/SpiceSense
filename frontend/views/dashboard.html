@@ -1,0 +1,128 @@
+<!-- User Dashboard View Template -->
+<div class="dashboard-view">
+
+  <!-- Profile Header Banner -->
+  <div style="background: linear-gradient(135deg, #1E293B, #0F172A); padding: 2rem; border-radius: var(--radius-lg); color: #FFFFFF; box-shadow: var(--shadow-xl); border: 2px solid var(--primary); margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #FFFFFF; font-weight: 800;">
+        {{vm.user.username.charAt(0).toUpperCase()}}
+      </div>
+      <div>
+        <h1 style="font-size: 1.8rem; color: #FFFFFF; margin-bottom: 0.2rem;">Welcome back, {{vm.user.username}}!</h1>
+        <p style="color: #CBD5E1; font-size: 0.9rem;"><i class="fa-regular fa-envelope"></i> {{vm.user.email}} • SpiceSense Culinary Member</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 0.75rem;">
+      <a href="#!/shopping-list" class="btn btn-sm btn-primary"><i class="fa-solid fa-cart-shopping"></i> Shopping List</a>
+      <button ng-click="$root.logout()" class="btn btn-sm btn-secondary"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 340px; gap: 2rem;">
+
+    <!-- Left Main Dashboard Panel -->
+    <div>
+      <!-- Favorite Recipes Section -->
+      <div style="background: #FFFFFF; padding: 1.75rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border); margin-bottom: 2rem;">
+        <h3 style="font-size: 1.3rem; color: var(--text-main); margin-bottom: 1.25rem;"><i class="fa-solid fa-heart" style="color: var(--secondary);"></i> My Favorite Recipes</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem;">
+          <div ng-repeat="item in vm.favorites" style="background: var(--bg-alt); padding: 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
+            <img ng-src="{{item.imageUrl}}" style="width: 100%; height: 110px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.5rem;">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.2rem;">{{item.name}}</h4>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">{{item.region}}</span>
+            <a ng-href="#!/recipes/{{item._id}}" class="btn btn-sm btn-outline" style="width: 100%; margin-top: 0.5rem;">Cook Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- My Created Recipes Section -->
+      <div style="background: #FFFFFF; padding: 1.75rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border); margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <h3 style="font-size: 1.3rem; color: var(--text-main); margin: 0;">
+            <i class="fa-solid fa-fire-burner" style="color: var(--primary);"></i> My Created Recipes ({{vm.myRecipes.length}})
+          </h3>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="#!/add-recipe" class="btn btn-sm btn-primary">
+              <i class="fa-solid fa-plus-circle"></i> + New Recipe
+            </a>
+            <a href="#!/my-recipes" class="btn btn-sm btn-outline" ng-if="vm.myRecipes.length > 0">
+              Manage All
+            </a>
+          </div>
+        </div>
+
+        <div ng-if="vm.myRecipes.length > 0" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem;">
+          <div ng-repeat="item in vm.myRecipes | limitTo: 4" style="background: #F8FAFC; padding: 0.85rem; border-radius: var(--radius-md); border: 1px solid #E2E8F0;">
+            <img ng-src="{{item.image || item.imageUrl || 'assets/recipes/community-placeholder.jpg'}}" style="width: 100%; height: 110px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.5rem;">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.2rem; color: var(--text-main);">{{item.name}}</h4>
+            <div style="display: flex; gap: 0.3rem; margin-bottom: 0.4rem;">
+              <span class="badge badge-region" style="font-size: 0.7rem;">{{item.region}}</span>
+              <span class="badge" style="font-size: 0.7rem; background: #E2E8F0; color: #475569;">{{item.classification || 'Traditional'}}</span>
+            </div>
+            <div style="display: flex; gap: 0.4rem;">
+              <a ng-href="#!/recipes/{{item._id}}" class="btn btn-sm btn-outline" style="flex: 1; text-align: center;">View</a>
+              <a ng-href="#!/edit-recipe/{{item._id}}" class="btn btn-sm btn-outline-primary" style="flex: 1; text-align: center;">Edit</a>
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="vm.myRecipes.length === 0" style="text-align: center; padding: 1.5rem; background: #F8FAFC; border-radius: var(--radius-md); border: 1px dashed #CBD5E1;">
+          <p class="text-muted" style="margin-bottom: 0.75rem;">You haven't published any community recipes yet.</p>
+          <a href="#!/add-recipe" class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-plus-circle"></i> Share Your First Recipe
+          </a>
+        </div>
+      </div>
+
+      <!-- Cooking History Log & Notes -->
+      <div style="background: #FFFFFF; padding: 1.75rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border);">
+        <h3 style="font-size: 1.3rem; color: var(--text-main); margin-bottom: 1.25rem;"><i class="fa-solid fa-book" style="color: var(--primary);"></i> Cooking History & Chef Notes</h3>
+        
+        <div style="display: grid; gap: 1rem;">
+          <div ng-repeat="log in vm.cookingHistory" style="background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+              <h4 style="font-size: 1.05rem; color: var(--text-main);">{{log.recipeName}}</h4>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">{{log.cookedAt | date:'mediumDate'}}</span>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+              Cooked {{log.servings}} servings • Consumed {{log.caloriesConsumed}} kcal
+            </div>
+            <div style="background: #FFFBEB; padding: 0.6rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid #FCD34D; font-size: 0.85rem; color: #78350F; font-style: italic;" ng-if="log.notes">
+              <i class="fa-solid fa-pen-to-square"></i> Note: "{{log.notes}}"
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Summary Sidebar -->
+    <div>
+      <!-- Weekly Nutrition Summary Card -->
+      <div style="background: linear-gradient(135deg, #FFFBEB, #FEF3C7); border: 1px solid #FCD34D; border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm);">
+        <h4 style="color: #92400E; font-size: 1.1rem; margin-bottom: 0.75rem;"><i class="fa-solid fa-chart-line"></i> Weekly Nutrition Summary</h4>
+        <div style="display: grid; gap: 0.5rem; font-size: 0.9rem; color: #78350F;">
+          <div style="display: flex; justify-content: space-between;"><span>Avg Daily Calories:</span> <strong>1,850 kcal</strong></div>
+          <div style="display: flex; justify-content: space-between;"><span>Protein intake:</span> <strong>64g / day</strong></div>
+          <div style="display: flex; justify-content: space-between;"><span>Tamil Heritage Meals:</span> <strong>12 cooked</strong></div>
+          <div style="display: flex; justify-content: space-between;"><span>Leftovers Reused:</span> <strong style="color: var(--accent);">5 meals saved</strong></div>
+        </div>
+      </div>
+
+      <!-- Recently Viewed Sidebar -->
+      <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border);">
+        <h4 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 1rem;"><i class="fa-regular fa-clock" style="color: var(--primary);"></i> Recently Viewed</h4>
+        <ul style="list-style: none; display: grid; gap: 0.75rem;">
+          <li ng-repeat="item in vm.recentlyViewed" style="display: flex; gap: 0.75rem; align-items: center;">
+            <img ng-src="{{item.imageUrl}}" style="width: 44px; height: 44px; border-radius: var(--radius-sm); object-fit: cover;">
+            <div style="flex: 1;">
+              <a ng-href="#!/recipes/{{item._id}}" style="font-weight: 700; font-size: 0.88rem; color: var(--text-main);">{{item.name}}</a>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">{{item.region}}</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>

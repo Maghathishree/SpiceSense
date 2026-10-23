@@ -1,0 +1,178 @@
+<!-- Recipe Detail View Template -->
+<div class="recipe-detail-view" ng-if="vm.recipe">
+
+  <!-- Floating Toast Notification -->
+  <div ng-if="vm.notificationMsg" style="position: fixed; top: 80px; right: 24px; z-index: 9999; background: #1E293B; color: #FFFFFF; padding: 0.85rem 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-xl); border-left: 4px solid var(--accent); display: flex; align-items: center; gap: 0.6rem;">
+    <i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> {{vm.notificationMsg}}
+  </div>
+
+  <!-- Breadcrumb & Banner -->
+  <div style="margin-bottom: 1.5rem;">
+    <a href="#!/recipes" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;"><i class="fa-solid fa-arrow-left"></i> Back to Recipe Catalog</a>
+  </div>
+
+  <div style="background: #FFFFFF; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border); margin-bottom: 2rem;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem;">
+      <!-- Recipe Media Header -->
+      <div>
+        <img ng-src="{{vm.recipe.image || vm.recipe.imageUrl || 'assets/recipes/community-placeholder.jpg'}}" alt="{{vm.recipe.name}}" style="width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      </div>
+
+      <!-- Overview Info & Action Bar -->
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+          <span class="badge" ng-class="vm.recipe.isTraditional ? 'badge-traditional' : 'badge-fusion'">{{vm.recipe.isTraditional ? 'Traditional Heritage' : 'Modern Fusion'}}</span>
+          <span class="badge badge-region"><i class="fa-solid fa-location-dot"></i> {{vm.recipe.region}}</span>
+          <span class="badge badge-diet" ng-repeat="tag in vm.recipe.dietaryTags">{{tag}}</span>
+        </div>
+
+        <h1 style="font-size: 2.2rem; color: var(--text-main); margin-bottom: 0.2rem;">{{vm.recipe.name}}</h1>
+        <h3 style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 0.85rem;" ng-if="vm.recipe.tamilName">{{vm.recipe.tamilName}}</h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">{{vm.recipe.description}}</p>
+
+        <!-- Key Specs Cards -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+          <div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Prep & Cook</span>
+            <div style="font-size: 1.1rem; font-weight: 800; color: var(--text-main);"><i class="fa-regular fa-clock" style="color: var(--primary);"></i> {{vm.recipe.prepTimeMinutes + vm.recipe.cookTimeMinutes}} mins</div>
+          </div>
+          <div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Difficulty</span>
+            <div style="font-size: 1.1rem; font-weight: 800; color: var(--text-main);">{{vm.recipe.difficulty}}</div>
+          </div>
+          <div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Batch Cost</span>
+            <div style="font-size: 1.1rem; font-weight: 800; color: var(--accent);">&#8377;{{vm.recipe.estimatedCostINR}}</div>
+          </div>
+        </div>
+
+        <!-- Buttons Toolbar -->
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: auto;">
+          <button class="btn btn-primary" ng-click="vm.toggleCookingMode()">
+            <i class="fa-solid fa-fire"></i> {{vm.isCookingMode ? 'Exit Cooking Mode' : 'Start Cooking Mode'}}
+          </button>
+          <button class="btn" style="background: #E11D48; color: #FFFFFF;" ng-click="vm.goToTasteRescue()" title="Fix taste defects (Too salty, too spicy, watery, etc.)">
+            <i class="fa-solid fa-kit-medical"></i> Taste Rescue
+          </button>
+          <button class="btn btn-accent" ng-click="vm.addToShoppingList()">
+            <i class="fa-solid fa-cart-plus"></i> Add to Shopping List
+          </button>
+          <button class="btn btn-secondary" ng-click="vm.findLeftoversForRecipe()">
+            <i class="fa-solid fa-flask"></i> Leftover Ideas
+          </button>
+          <button class="btn btn-outline" style="border-color: var(--primary); color: var(--primary);" ng-if="vm.isOwner" ng-click="vm.editRecipe()">
+            <i class="fa-solid fa-pen-to-square"></i> Edit Recipe
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLEXIBLE COOKING ENGINE & NUTRITION SECTION -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+
+    <!-- Flexible Serving Adjuster & Ingredients List -->
+    <div style="background: #FFFFFF; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-md); border: 1px solid var(--border);">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.3rem; color: var(--text-main);"><i class="fa-solid fa-sliders" style="color: var(--primary);"></i> Flexible Serving Calculator</h3>
+        
+        <!-- Two-Way Data Binding Serving Controls -->
+        <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--bg-alt); padding: 0.3rem 0.75rem; border-radius: var(--radius-pill); border: 1px solid var(--border);">
+          <button ng-click="vm.decrementServings()" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--primary); font-weight: bold;">-</button>
+          <span style="font-weight: 800; font-size: 1.1rem; width: 40px; text-align: center;" class="scale-pop">{{vm.servings}}</span>
+          <button ng-click="vm.incrementServings()" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--primary); font-weight: bold;">+</button>
+          <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.2rem;">servings</span>
+        </div>
+      </div>
+
+      <!-- Spice Level Personalizer -->
+      <div style="background: #FEF2F2; padding: 0.85rem 1rem; border-radius: var(--radius-md); border: 1px solid #FCA5A5; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700; font-size: 0.88rem; color: #991B1B;"><i class="fa-solid fa-pepper-hot"></i> Spice Personalization:</span>
+        <select ng-model="vm.spiceLevel" ng-change="vm.recalculateIngredients()" class="form-control" style="padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid #F87171; font-weight: 600;">
+          <option value="1">Mild (Reduced Chillies)</option>
+          <option value="2">Medium (Original Balance)</option>
+          <option value="3">Spicy (Extra Heat)</option>
+          <option value="4">Extra Spicy (Chettinad Fire)</option>
+        </select>
+      </div>
+
+      <h4 style="font-size: 1rem; margin-bottom: 0.85rem; color: var(--text-main);">Scaled Ingredients (Serves {{vm.servings}}):</h4>
+      
+      <!-- Scaled Ingredients Table -->
+      <ul style="list-style: none; display: grid; gap: 0.6rem;">
+        <li ng-repeat="ing in vm.scaledIngredients" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: var(--bg-alt); border-radius: var(--radius-sm);">
+          <div>
+            <strong style="color: var(--text-main); font-size: 0.95rem;">{{ing.name}}</strong>
+            <span ng-if="ing.isOptional" style="font-size: 0.75rem; color: var(--text-muted); font-style: italic;"> (Optional)</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-weight: 800; color: var(--primary);" class="scale-pop">{{ing.quantity}} {{ing.unit}}</span>
+            <button class="btn btn-sm btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;" ng-click="vm.openSubstituteModal(ing.name)" title="Find Substitute">
+              Substitute
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Dynamic Nutrition Card Component (<nutrition-card>) -->
+    <div>
+      <nutrition-card nutrition="vm.recipe.nutritionPerServing" servings="vm.servings" base-servings="vm.baseServings"></nutrition-card>
+
+      <!-- Paati's Tip Directive (<paati-tip>) -->
+      <paati-tip tip="vm.recipe.paatiTip"></paati-tip>
+
+      <!-- Equipment Required -->
+      <div style="background: #FFFFFF; border-radius: var(--radius-md); padding: 1.25rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); margin-top: 1rem;">
+        <h5 style="color: var(--text-main); margin-bottom: 0.5rem;"><i class="fa-solid fa-kitchen-set" style="color: var(--primary);"></i> Recommended Kitchenware</h5>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="badge badge-region" ng-repeat="eq in vm.recipe.requiredEquipment">{{eq}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STEP-BY-STEP COOKING INSTRUCTIONS & INTERACTIVE MODE -->
+  <div style="background: #FFFFFF; border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid var(--border); margin-bottom: 2.5rem;">
+    <h3 style="font-size: 1.4rem; color: var(--text-main); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+      <i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Step-by-Step Cooking Instructions
+    </h3>
+
+    <div style="display: grid; gap: 1rem;">
+      <div ng-repeat="step in vm.recipe.instructions track by $index" style="display: flex; gap: 1rem; align-items: flex-start; padding: 1rem; border-radius: var(--radius-md); background: var(--bg-alt);" ng-class="{'leftover-glow-active': vm.isCookingMode && $index === vm.completedSteps.length}">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; flex-shrink: 0;">
+          {{step.stepNumber || ($index + 1)}}
+        </div>
+        <div style="flex: 1;">
+          <p style="font-size: 1rem; color: var(--text-main); line-height: 1.6;" ng-style="{'text-decoration': vm.completedSteps.indexOf($index) !== -1 ? 'line-through' : 'none', 'opacity': vm.completedSteps.indexOf($index) !== -1 ? 0.5 : 1}">
+            {{step.instruction}}
+          </p>
+        </div>
+        <div ng-if="vm.isCookingMode">
+          <input type="checkbox" ng-checked="vm.completedSteps.indexOf($index) !== -1" ng-click="vm.toggleStepComplete($index)" style="width: 22px; height: 22px; cursor: pointer;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INGREDIENT SUBSTITUTION MODAL -->
+  <div class="recipe-modal-backdrop" ng-if="vm.showSubModal" ng-click="vm.showSubModal = false">
+    <div class="recipe-modal-content" ng-click="$event.stopPropagation()">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--primary); padding-bottom: 1rem; margin-bottom: 1.25rem;">
+        <h3 style="color: var(--text-main); font-size: 1.3rem;">
+          <i class="fa-solid fa-arrows-rotate" style="color: var(--primary);"></i> Ingredient Substitutes for: <span style="color: var(--primary);">{{vm.selectedSubIngredient}}</span>
+        </h3>
+        <button ng-click="vm.showSubModal = false" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+      </div>
+
+      <div ng-repeat="sub in vm.substitutesList" style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1rem; border-left: 4px solid var(--accent);">
+        <h4 style="font-size: 1.1rem; color: var(--accent); margin-bottom: 0.35rem;">Alternative: {{sub.substituteIngredient}}</h4>
+        <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 0.25rem;"><strong>Ratio:</strong> {{sub.quantityRatio}}</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.25rem;"><strong>Taste Profile:</strong> {{sub.tasteImpact}}</p>
+        <p style="font-size: 0.85rem; color: #78350F; font-style: italic;"><strong>When to Add:</strong> {{sub.whenToAdd}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

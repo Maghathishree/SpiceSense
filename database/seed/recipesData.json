@@ -1,0 +1,2345 @@
+[
+  {
+    "name": "Traditional Madurai Idli & Sambar",
+    "tamilName": "மால்கோவா இட்லி சாம்பார்",
+    "description": "Pillowy soft steamed rice cakes served with aromatic Madurai style thuvai sambar infused with fresh shallots, drumstick, and freshly roasted spices.",
+    "category": "Breakfast",
+    "region": "Madurai",
+    "isTraditional": true,
+    "mealType": "Breakfast",
+    "ingredients": [
+      {
+        "name": "Idli Rice",
+        "quantity": 2,
+        "unit": "cups",
+        "category": "Grains"
+      },
+      {
+        "name": "Urad Dal (Whole White)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Pulses"
+      },
+      {
+        "name": "Fenugreek Seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Toor Dal",
+        "quantity": 0.75,
+        "unit": "cup",
+        "category": "Pulses"
+      },
+      {
+        "name": "Small Onions (Shallots)",
+        "quantity": 15,
+        "unit": "pieces",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Tomatoes",
+        "quantity": 2,
+        "unit": "pieces",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Drumstick",
+        "quantity": 1,
+        "unit": "piece",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Sambar Powder",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Tamarind Extract",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Condiments"
+      },
+      {
+        "name": "Mustard Seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Curry Leaves",
+        "quantity": 10,
+        "unit": "leaves",
+        "category": "Herbs"
+      },
+      {
+        "name": "Ghee",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Dairy"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soak Idli rice and urad dal separately with fenugreek seeds for 5 hours. Grind urad dal until fluffy and rice until slightly coarse."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mix batters together with sea salt and allow natural overnight fermentation for 8-10 hours until doubled."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pour batter into greased idli molds and steam on high heat for 10-12 minutes until toothpick comes out clean."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pressure cook Toor dal with turmeric. In a pot, boil shallots, drumstick, tomatoes, tamarind, and sambar powder. Mix cooked dal and temper with mustard, curry leaves, and ghee."
+      }
+    ],
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 25,
+    "difficulty": "Medium",
+    "servings": 4,
+    "estimatedCostINR": 90,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 280,
+      "protein": 11,
+      "carbs": 52,
+      "fat": 3,
+      "fiber": 6
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "High-Fiber"
+    ],
+    "requiredEquipment": [
+      "Wet Grinder / Blender",
+      "Idli Steamer",
+      "Pressure Cooker"
+    ],
+    "paatiTip": "Add a small pinch of castor oil or methi seeds while grinding urad dal to achieve ultra-fluffy Madurai style idlis.",
+    "modernVariation": "Stuffed Paneer & Spinach Idli mini bites.",
+    "substitutions": [
+      {
+        "originalIngredient": "Tamarind Extract",
+        "substituteIngredient": "Lemon Juice",
+        "quantityRatio": "1 tbsp Lemon Juice per 2 tbsp Tamarind",
+        "tasteImpact": "Fresh tangy citrus flavor",
+        "whenToAdd": "Add right after turning off heat"
+      }
+    ],
+    "imageUrl": "assets/recipes/idli.jpg",
+    "ratings": {
+      "average": 4.9,
+      "count": 28
+    },
+    "image": "assets/recipes/idli.jpg"
+  },
+  {
+    "name": "Chettinad Spicy Chicken / Mushroom Sukka",
+    "tamilName": "செட்டிநாடு சிக்கன் சுக்கா",
+    "description": "World-famous Chettinad specialty cooked with hand-pounded kalpasi, star anise, maratti mokku, dry red chillies, and freshly grated coconut.",
+    "category": "Regional",
+    "region": "Chettinad",
+    "isTraditional": true,
+    "mealType": "Lunch",
+    "ingredients": [
+      {
+        "name": "Chicken / Mushroom",
+        "quantity": 500,
+        "unit": "grams",
+        "category": "Protein"
+      },
+      {
+        "name": "Small Onions (Shallots)",
+        "quantity": 20,
+        "unit": "pieces",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Dry Red Chillies",
+        "quantity": 6,
+        "unit": "pieces",
+        "category": "Spices"
+      },
+      {
+        "name": "Black Pepper Corns",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Fennel Seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Coriander Seeds",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Grated Coconut",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Coconut"
+      },
+      {
+        "name": "Ginger Garlic Paste",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "category": "Aromatics"
+      },
+      {
+        "name": "Gingelly Oil (Sesame)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Oils"
+      },
+      {
+        "name": "Curry Leaves",
+        "quantity": 20,
+        "unit": "leaves",
+        "category": "Herbs"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dry roast coriander seeds, fennel seeds, black peppercorns, red chillies, and grated coconut until golden brown and fragrant. Grind into a fine Chettinad masala powder."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Heat gingelly oil in a heavy iron kadai. Splutter fennel seeds and fry abundant curry leaves and sliced shallots until caramel brown."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add ginger garlic paste followed by chicken pieces (or button mushrooms) and sauté on high heat until sealed."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Add the ground Chettinad spice blend, salt, and half cup water. Simmer until the gravy thickens into a glossy dry sukka coating every piece."
+      }
+    ],
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 30,
+    "difficulty": "Hard",
+    "servings": 4,
+    "estimatedCostINR": 240,
+    "spiceLevel": 4,
+    "nutritionPerServing": {
+      "calories": 340,
+      "protein": 28,
+      "carbs": 12,
+      "fat": 18,
+      "fiber": 4
+    },
+    "dietaryTags": [
+      "High-Protein",
+      "Gluten-Free"
+    ],
+    "requiredEquipment": [
+      "Spice Grinder",
+      "Iron Kadai / Heavy Pan"
+    ],
+    "paatiTip": "Always use cold-pressed gingelly oil (nallennai) and cast iron skillet. Kalpasi (stone flower) is the secret aromatic key of authentic Chettinad houses.",
+    "modernVariation": "Chettinad Tacos filled with dry pepper chicken sukka and cucumber kachumber.",
+    "substitutions": [
+      {
+        "originalIngredient": "Grated Coconut",
+        "substituteIngredient": "Cashew Paste",
+        "quantityRatio": "2 tbsp Cashew Paste per 0.5 cup Coconut",
+        "tasteImpact": "Richer creamy mouthfeel without coconut fibers",
+        "whenToAdd": "Add towards the last 5 minutes of cooking"
+      }
+    ],
+    "imageUrl": "assets/recipes/chettinad-sukka.jpg",
+    "ratings": {
+      "average": 5,
+      "count": 42
+    },
+    "image": "assets/recipes/chettinad-sukka.jpg"
+  },
+  {
+    "name": "Crispy Ghee Roast Dosa",
+    "tamilName": "நெய் ரோஸ்ட் தோசை",
+    "description": "Golden paper-thin crispy fermented rice crepes roasted with pure desi ghee served with spicy Kara Chutney and Coconut Chutney.",
+    "category": "Breakfast",
+    "region": "Chennai",
+    "isTraditional": true,
+    "mealType": "Breakfast",
+    "ingredients": [
+      {
+        "name": "Dosa Batter",
+        "quantity": 4,
+        "unit": "ladles",
+        "category": "Batter"
+      },
+      {
+        "name": "Desi Ghee",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Dairy"
+      },
+      {
+        "name": "Potato Masala",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Filling"
+      },
+      {
+        "name": "Red Chutney (Kara)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Condiments"
+      },
+      {
+        "name": "Coconut Chutney",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Condiments"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Heat a heavy cast iron tawa until smoking hot. Wipe with a damp cloth and pour a ladle of fermented dosa batter."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Spread in thin concentric circles moving from center outwards."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Generously drizzle warm pure ghee around the edges and center. Roast on medium flame until deep golden crisp."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Spread optional potato masala inside, roll into a classic cone shape and serve piping hot."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 15,
+    "difficulty": "Easy",
+    "servings": 2,
+    "estimatedCostINR": 70,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 310,
+      "protein": 6,
+      "carbs": 44,
+      "fat": 12,
+      "fiber": 3
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Gluten-Free"
+    ],
+    "requiredEquipment": [
+      "Cast Iron Dosa Tawa",
+      "Flat Spatula"
+    ],
+    "paatiTip": "Season your iron tawa with half an onion dipped in gingelly oil before pouring batter for zero sticking and paper-thin crispiness.",
+    "modernVariation": "Cheese & Garlic Butter Dosa Roll.",
+    "substitutions": [
+      {
+        "originalIngredient": "Desi Ghee",
+        "substituteIngredient": "Sesame Oil (Gingelly)",
+        "quantityRatio": "Equal ratio",
+        "tasteImpact": "Earthy nutty taste with lower saturated fat",
+        "whenToAdd": "Drizzle over cooking dosa"
+      }
+    ],
+    "imageUrl": "assets/recipes/dosa.jpg",
+    "ratings": {
+      "average": 4.8,
+      "count": 35
+    },
+    "image": "assets/recipes/dosa.jpg"
+  },
+  {
+    "name": "Ven Pongal & Medu Vada",
+    "tamilName": "வெண் பொங்கல் மெது வடை",
+    "description": "Comforting dish of cooked rice and moong dal tempered with crushed black pepper, cumin, ginger, cashews, ghee served alongside crunchy urad dal vadas.",
+    "category": "Breakfast",
+    "region": "Thanjavur",
+    "isTraditional": true,
+    "mealType": "Breakfast",
+    "ingredients": [
+      {
+        "name": "Raw Rice (Raw Sonamasuri)",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Grains"
+      },
+      {
+        "name": "Yellow Moong Dal",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Pulses"
+      },
+      {
+        "name": "Whole Black Peppercorns",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Cumin Seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Grated Ginger",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Aromatics"
+      },
+      {
+        "name": "Cashews",
+        "quantity": 12,
+        "unit": "pieces",
+        "category": "Nuts"
+      },
+      {
+        "name": "Ghee",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Dairy"
+      },
+      {
+        "name": "Curry Leaves",
+        "quantity": 12,
+        "unit": "leaves",
+        "category": "Herbs"
+      },
+      {
+        "name": "Asafoetida (Hing)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "category": "Spices"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lightly roast yellow moong dal until fragrant. Wash raw rice and dal together."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pressure cook with 4.5 cups water and salt for 4 whistles until soft and mushy."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "In a small pan, heat ghee. Fry cashews until golden, add crushed black pepper, cumin, minced ginger, hing, and curry leaves."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pour aromatic ghee tempering into hot soft pongal, mix thoroughly and serve with coconut chutney and sambar."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 20,
+    "difficulty": "Easy",
+    "servings": 4,
+    "estimatedCostINR": 85,
+    "spiceLevel": 1,
+    "nutritionPerServing": {
+      "calories": 320,
+      "protein": 8,
+      "carbs": 48,
+      "fat": 11,
+      "fiber": 4
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Comfort-Food"
+    ],
+    "requiredEquipment": [
+      "Pressure Cooker",
+      "Tadka Pan"
+    ],
+    "paatiTip": "Coarsely crush black pepper and cumin using a mortar pestle instead of powdering so each bite delivers a warm popping aroma.",
+    "modernVariation": "Foxtail Millet (Thinai) Ven Pongal for diabetic-friendly morning meal.",
+    "substitutions": [
+      {
+        "originalIngredient": "Raw Rice",
+        "substituteIngredient": "Foxtail Millet (Thinai)",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Nutty profile with low glycemic index",
+        "whenToAdd": "Cook along with roasted moong dal"
+      }
+    ],
+    "imageUrl": "assets/recipes/pongal.jpg",
+    "ratings": {
+      "average": 4.9,
+      "count": 22
+    },
+    "image": "assets/recipes/pongal.jpg"
+  },
+  {
+    "name": "Tirunelveli Sodhi & Ginger Chutney",
+    "tamilName": "திருநெல்வேலி சொதி",
+    "description": "Rich coconut milk stew cooked with moong dal, drumstick, potatoes, and mild green chillies. Famous wedding meal dish from Tirunelveli.",
+    "category": "Regional",
+    "region": "Tirunelveli",
+    "isTraditional": true,
+    "mealType": "Lunch",
+    "ingredients": [
+      {
+        "name": "Thick Coconut Milk",
+        "quantity": 1.5,
+        "unit": "cups",
+        "category": "Coconut"
+      },
+      {
+        "name": "Thin Coconut Milk",
+        "quantity": 2,
+        "unit": "cups",
+        "category": "Coconut"
+      },
+      {
+        "name": "Moong Dal (Cooked)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Pulses"
+      },
+      {
+        "name": "Mixed Vegetables (Drumstick, Potato, Carrot)",
+        "quantity": 2,
+        "unit": "cups",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Green Chillies",
+        "quantity": 5,
+        "unit": "pieces",
+        "category": "Spices"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Condiments"
+      },
+      {
+        "name": "Coconut Oil",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "category": "Oils"
+      },
+      {
+        "name": "Mustard Seeds & Curry Leaves",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Boil mixed vegetables with slit green chillies and salt in thin coconut milk until fork tender."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Add mashed cooked moong dal and bring to a soft simmer."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Turn heat to ultra-low, pour in thick coconut milk. Simmer gently for 2 minutes without boiling."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Remove from heat, drizzle fresh coconut oil tempering and squeeze lemon juice before serving with raw banana curry."
+      }
+    ],
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 20,
+    "difficulty": "Medium",
+    "servings": 4,
+    "estimatedCostINR": 110,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 290,
+      "protein": 6,
+      "carbs": 26,
+      "fat": 18,
+      "fiber": 5
+    },
+    "dietaryTags": [
+      "Vegan",
+      "Gluten-Free",
+      "Rich-Royal"
+    ],
+    "requiredEquipment": [
+      "Pot",
+      "Tadka Pan"
+    ],
+    "paatiTip": "Never boil the stew after adding thick coconut milk, otherwise it will curdle. Squeeze lemon juice only after the stew cools down slightly.",
+    "modernVariation": "Coconut Sodhi Soup with Sourdough Garlic Croutons.",
+    "substitutions": [
+      {
+        "originalIngredient": "Coconut Milk",
+        "substituteIngredient": "Cashew Milk",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Velvety nutty taste without coconut aroma",
+        "whenToAdd": "Add at final simmering phase"
+      }
+    ],
+    "imageUrl": "assets/recipes/tirunelveli-sodhi.jpg",
+    "ratings": {
+      "average": 4.7,
+      "count": 19
+    },
+    "image": "assets/recipes/tirunelveli-sodhi.jpg"
+  },
+  {
+    "name": "Kongu Arisi Paruppu Sadam",
+    "tamilName": "கொங்கு அரிசி பருப்பு சாதம்",
+    "description": "Authentic Kongu Nadu comforting one-pot rice and dal cooked with garlic, shallots, cumin, dry chillies, and generous ghee.",
+    "category": "Regional",
+    "region": "Kongu Nadu",
+    "isTraditional": true,
+    "mealType": "Lunch",
+    "ingredients": [
+      {
+        "name": "Raw Rice / Ponni Rice",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Grains"
+      },
+      {
+        "name": "Toor Dal",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Pulses"
+      },
+      {
+        "name": "Shallots (Small Onions)",
+        "quantity": 12,
+        "unit": "pieces",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Garlic Cloves",
+        "quantity": 8,
+        "unit": "pieces",
+        "category": "Aromatics"
+      },
+      {
+        "name": "Dry Red Chillies",
+        "quantity": 4,
+        "unit": "pieces",
+        "category": "Spices"
+      },
+      {
+        "name": "Cumin Seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Mustard Seeds",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Turmeric Powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Ghee / Groundnut Oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Oils"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Wash rice and toor dal. Heat oil in a pressure cooker."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Add mustard seeds, cumin seeds, broken dry chillies, sliced shallots, garlic cloves, and curry leaves. Saute until golden."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add chopped tomatoes, turmeric, salt, rice, and dal."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pour 3.5 cups water, pressure cook for 4 whistles. Mash lightly with ghee and serve hot with appalam."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 15,
+    "difficulty": "Easy",
+    "servings": 3,
+    "estimatedCostINR": 65,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 350,
+      "protein": 12,
+      "carbs": 58,
+      "fat": 8,
+      "fiber": 5
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Quick-Meal"
+    ],
+    "requiredEquipment": [
+      "Pressure Cooker"
+    ],
+    "paatiTip": "Crush garlic cloves lightly with skin on before adding to oil for rustic village flavor.",
+    "modernVariation": "Brown Rice & Quinoa Arisi Paruppu Sadam.",
+    "substitutions": [
+      {
+        "originalIngredient": "Toor Dal",
+        "substituteIngredient": "Yellow Moong Dal",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Faster digestion and lighter body",
+        "whenToAdd": "Cook together with rice"
+      }
+    ],
+    "imageUrl": "assets/recipes/arisi-paruppu-sadam.jpg",
+    "ratings": {
+      "average": 4.8,
+      "count": 25
+    },
+    "image": "assets/recipes/arisi-paruppu-sadam.jpg"
+  },
+  {
+    "name": "Tangy Poondu Vatha Kuzhambu",
+    "tamilName": "பூண்டு வத்த குழம்பு",
+    "description": "Fiery tamarind curry stewed with whole garlic cloves, sundakkai vathal (turkey berry), sesame oil, and freshly ground spicy kozhambu powder.",
+    "category": "Lunch",
+    "region": "Thanjavur",
+    "isTraditional": true,
+    "mealType": "Lunch",
+    "ingredients": [
+      {
+        "name": "Garlic Cloves (Whole)",
+        "quantity": 25,
+        "unit": "pieces",
+        "category": "Aromatics"
+      },
+      {
+        "name": "Sundakkai Vathal (Dried Turkey Berry)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Vathal"
+      },
+      {
+        "name": "Tamarind Pulp",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Condiments"
+      },
+      {
+        "name": "Gingelly Oil (Sesame)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "category": "Oils"
+      },
+      {
+        "name": "Vatha Kuzhambu Powder",
+        "quantity": 2.5,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Jaggery",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Sweeteners"
+      },
+      {
+        "name": "Mustard & Fenugreek Seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soak tamarind in warm water and extract 2 cups thick juice."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "In a clay pot, heat sesame oil. Fry sundakkai vathal until dark brown and remove."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add mustard, fenugreek seeds, curry leaves, and garlic cloves. Sauté on slow fire until garlic turns soft golden."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Add tamarind extract, kozhambu powder, salt, and jaggery. Simmer until oil floats on top."
+      }
+    ],
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 25,
+    "difficulty": "Medium",
+    "servings": 5,
+    "estimatedCostINR": 80,
+    "spiceLevel": 4,
+    "nutritionPerServing": {
+      "calories": 190,
+      "protein": 4,
+      "carbs": 22,
+      "fat": 10,
+      "fiber": 4
+    },
+    "dietaryTags": [
+      "Vegan",
+      "Gluten-Free",
+      "Immunity-Booster"
+    ],
+    "requiredEquipment": [
+      "Clay Pot (Eecham Satti) / Heavy Pan"
+    ],
+    "paatiTip": "Store Vatha Kuzhambu in glass jars; it tastes even better after 2 days as garlic absorbs the tangy tamarind oil!",
+    "modernVariation": "Vatha Kuzhambu Flavored Roasted Foxnuts (Makhana).",
+    "substitutions": [
+      {
+        "originalIngredient": "Sundakkai Vathal",
+        "substituteIngredient": "Manathakkali Vathal / Small Shallots",
+        "quantityRatio": "Equal quantity",
+        "tasteImpact": "Slightly less bitter, sweet onion balance",
+        "whenToAdd": "Fry initially in sesame oil"
+      }
+    ],
+    "imageUrl": "assets/recipes/vatha-kuzhambu.jpg",
+    "ratings": {
+      "average": 4.9,
+      "count": 31
+    },
+    "image": "assets/recipes/vatha-kuzhambu.jpg"
+  },
+  {
+    "name": "Kothu Parotta (Paneer / Egg / Chicken)",
+    "tamilName": "கொத்து பரோட்டா",
+    "description": "Popular Madurai street food featuring shredded flaky parottas wok-tossed with onions, tomatoes, curry leaves, green chillies, and rich spiced salna.",
+    "category": "Snacks",
+    "region": "Madurai",
+    "isTraditional": true,
+    "mealType": "Dinner",
+    "ingredients": [
+      {
+        "name": "Malabar Parotta (Shredded)",
+        "quantity": 4,
+        "unit": "pieces",
+        "category": "Bread"
+      },
+      {
+        "name": "Eggs / Paneer / Mushrooms",
+        "quantity": 3,
+        "unit": "pieces",
+        "category": "Protein"
+      },
+      {
+        "name": "Onion (Finely Chopped)",
+        "quantity": 2,
+        "unit": "pieces",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Tomatoes",
+        "quantity": 2,
+        "unit": "pieces",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Spicy Salna Gravy",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Gravy"
+      },
+      {
+        "name": "Chilli Powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Garam Masala",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Oil / Ghee",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Oils"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tear parottas into small bite-sized shredded pieces."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Heat oil on a heavy iron flat wok. Sauté onions, chillies, tomatoes, and curry leaves until fragrant."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Scramble eggs (or paneer cubes) into the mixture. Add parotta pieces and pour hot salna gravy over it."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Using two flat metal spatulas, beat and mince the parotta rhythmically on high flame until hot, crispy, and well blended."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 15,
+    "difficulty": "Medium",
+    "servings": 2,
+    "estimatedCostINR": 140,
+    "spiceLevel": 3,
+    "nutritionPerServing": {
+      "calories": 480,
+      "protein": 18,
+      "carbs": 56,
+      "fat": 20,
+      "fiber": 4
+    },
+    "dietaryTags": [
+      "Street-Food-Classic",
+      "High-Energy"
+    ],
+    "requiredEquipment": [
+      "Flat Wok / Tawa",
+      "2 Steel Spatulas"
+    ],
+    "paatiTip": "Use leftover slightly dry parottas for the crispest texture when minced on high heat.",
+    "modernVariation": "Paneer Kothu Parotta Wrap.",
+    "substitutions": [
+      {
+        "originalIngredient": "Malabar Parotta",
+        "substituteIngredient": "Whole Wheat Chapati",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Healthier low-fat version with higher fiber",
+        "whenToAdd": "Shred Chapati and toss with salna"
+      }
+    ],
+    "imageUrl": "assets/recipes/kothu-parotta.jpg",
+    "ratings": {
+      "average": 4.9,
+      "count": 50
+    },
+    "image": "assets/recipes/kothu-parotta.jpg"
+  },
+  {
+    "name": "Millet Dosa Wrap with Curry Leaf Hummus",
+    "tamilName": "சிறுதானிய தோசை ரேப்",
+    "description": "Modern Tamil fusion crepe made with ragi and kuthiraivali millet batter, stuffed with spiced roasted veggies and curry leaf cashew hummus.",
+    "category": "Fusion",
+    "region": "Coimbatore",
+    "isTraditional": false,
+    "mealType": "Breakfast",
+    "ingredients": [
+      {
+        "name": "Mixed Millet Batter (Ragi/Barnyard)",
+        "quantity": 3,
+        "unit": "ladles",
+        "category": "Batter"
+      },
+      {
+        "name": "Curry Leaf Hummus",
+        "quantity": 4,
+        "unit": "tbsp",
+        "category": "Dip"
+      },
+      {
+        "name": "Sautéed Vegetables (Bell Peppers, Zucchini, Carrots)",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Grumble Cottage Cheese (Paneer)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Dairy"
+      },
+      {
+        "name": "Olive Oil / Ghee",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Oils"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Blend boiled chickpeas with roasted curry leaves, tahini/cashews, garlic, lemon, and olive oil to make green curry leaf hummus."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Make thin millet dosa on hot skillet. Drizzle olive oil or ghee."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Spread curry leaf hummus generously across the inner surface of the warm dosa."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fill center with sautéed veggies and paneer. Roll into a cylindrical wrap, cut diagonally and serve."
+      }
+    ],
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 10,
+    "difficulty": "Easy",
+    "servings": 2,
+    "estimatedCostINR": 120,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 310,
+      "protein": 14,
+      "carbs": 40,
+      "fat": 10,
+      "fiber": 8
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "High-Protein",
+      "Superfood-Millet",
+      "High-Fiber"
+    ],
+    "requiredEquipment": [
+      "Non-stick / Iron Tawa",
+      "Food Processor"
+    ],
+    "paatiTip": "Incorporate local millets like Thinai or Kuthiraivali; soaking millets with fenugreek renders the dosa crisp and fragrant.",
+    "modernVariation": "Cold Smoked Tofu & Millet Dosa Roll.",
+    "substitutions": [
+      {
+        "originalIngredient": "Curry Leaf Hummus",
+        "substituteIngredient": "Mint Coriander Chutney",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Spicier sharper local herb taste",
+        "whenToAdd": "Spread over warm dosa"
+      }
+    ],
+    "imageUrl": "assets/recipes/millet-dosa-wrap.jpg",
+    "ratings": {
+      "average": 4.6,
+      "count": 16
+    },
+    "image": "assets/recipes/millet-dosa-wrap.jpg"
+  },
+  {
+    "name": "Chettinad Creamy Spice Pasta",
+    "tamilName": "செட்டிநாடு பாஸ்தா",
+    "description": "Fusion dish combining Italian Penne pasta tossed in a velvety coconut-tomato reduction infused with authentic Chettinad spices.",
+    "category": "Fusion",
+    "region": "Chennai",
+    "isTraditional": false,
+    "mealType": "Dinner",
+    "ingredients": [
+      {
+        "name": "Penne Pasta",
+        "quantity": 250,
+        "unit": "grams",
+        "category": "Pasta"
+      },
+      {
+        "name": "Coconut Milk / Heavy Cream",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Dairy"
+      },
+      {
+        "name": "Tomato Puree",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Chettinad Masala Blend",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Garlic (Minced)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Aromatics"
+      },
+      {
+        "name": "Butter / Olive Oil",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "category": "Oils"
+      },
+      {
+        "name": "Fresh Basil & Curry Leaves",
+        "quantity": 8,
+        "unit": "leaves",
+        "category": "Herbs"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Boil Penne pasta in salted water until al dente. Drain and reserve pasta water."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "In a pan, melt butter. Saute minced garlic and curry leaves until sizzling."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add tomato puree and Chettinad masala powder. Simmer for 5 minutes until cooked."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Stir in coconut milk, toss cooked pasta into sauce, sprinkle fresh basil and serve with garlic bread."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 20,
+    "difficulty": "Easy",
+    "servings": 3,
+    "estimatedCostINR": 160,
+    "spiceLevel": 3,
+    "nutritionPerServing": {
+      "calories": 410,
+      "protein": 12,
+      "carbs": 62,
+      "fat": 14,
+      "fiber": 5
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Modern-Fusion"
+    ],
+    "requiredEquipment": [
+      "Pasta Pot",
+      "Skillet"
+    ],
+    "paatiTip": "Tempering curry leaves in melted butter before adding pasta sauce bridges Western pasta with Southern aromas flawlessly.",
+    "modernVariation": "Spiced Prawn & Chettinad Linguine.",
+    "substitutions": [
+      {
+        "originalIngredient": "Coconut Milk",
+        "substituteIngredient": "Heavy Dairy Cream",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Thicker Western creaminess",
+        "whenToAdd": "Finish on low flame"
+      }
+    ],
+    "imageUrl": "assets/recipes/chettinad-pasta.jpg",
+    "ratings": {
+      "average": 4.7,
+      "count": 24
+    },
+    "image": "assets/recipes/chettinad-pasta.jpg"
+  },
+  {
+    "name": "Classic Sakkarai Pongal",
+    "tamilName": "சர்க்கரை பொங்கல்",
+    "description": "Rich festive sweet made with raw rice, moong dal, dark organic jaggery, cardamom, nutmeg, and cashew nuts fried in ghee.",
+    "category": "Sweets",
+    "region": "Thanjavur",
+    "isTraditional": true,
+    "mealType": "Dessert",
+    "ingredients": [
+      {
+        "name": "Raw Rice (Pachai Arisi)",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Grains"
+      },
+      {
+        "name": "Yellow Moong Dal",
+        "quantity": 0.25,
+        "unit": "cup",
+        "category": "Pulses"
+      },
+      {
+        "name": "Organic Jaggery (Paagu Vellam)",
+        "quantity": 1.25,
+        "unit": "cups",
+        "category": "Sweeteners"
+      },
+      {
+        "name": "Desi Ghee",
+        "quantity": 4,
+        "unit": "tbsp",
+        "category": "Dairy"
+      },
+      {
+        "name": "Cashews & Raisins",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Nuts"
+      },
+      {
+        "name": "Cardamom & Nutmeg Powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Edible Camphor (Pacha Karpooram)",
+        "quantity": 1,
+        "unit": "pinch",
+        "category": "Spices"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Roast moong dal gently until fragrant. Pressure cook rice and dal with 4 cups milk and water until creamy mushy."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Melt jaggery in half cup water, strain impurities, and bring to syrup consistency."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mix jaggery syrup into cooked rice dal mash on medium flame."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fry cashews and raisins in ghee until golden. Pour over pongal with cardamom, nutmeg, and a tiny pinch of edible camphor."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 25,
+    "difficulty": "Medium",
+    "servings": 4,
+    "estimatedCostINR": 100,
+    "spiceLevel": 1,
+    "nutritionPerServing": {
+      "calories": 380,
+      "protein": 6,
+      "carbs": 70,
+      "fat": 10,
+      "fiber": 2
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Festive-Sweet"
+    ],
+    "requiredEquipment": [
+      "Brass Pot (Vengala Panai) / Pressure Cooker"
+    ],
+    "paatiTip": "A microscopic pinch of Pacha Karpooram (edible camphor) gives temple prasadam fragrance to your home cooked Sakkarai Pongal.",
+    "modernVariation": "Sakkarai Pongal Shots topped with salted caramel nuts.",
+    "substitutions": [
+      {
+        "originalIngredient": "Paagu Vellam (Jaggery)",
+        "substituteIngredient": "Palm Jaggery (Karupatti)",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Earthy dark caramel profile with higher minerals",
+        "whenToAdd": "Melt and strain into cooked rice"
+      }
+    ],
+    "imageUrl": "assets/recipes/sakkarai-pongal.jpg",
+    "ratings": {
+      "average": 5,
+      "count": 39
+    },
+    "image": "assets/recipes/sakkarai-pongal.jpg"
+  },
+  {
+    "name": "Nagercoil Coconut Fish / Veg Kuzhambu",
+    "tamilName": "நாகர்கோவில் மீன் / காய் குழம்பு",
+    "description": "Kanyakumari coastal curry cooked with freshly ground raw coconut, cumin, garlic, tamarind water, and green chillies.",
+    "category": "Regional",
+    "region": "Nagercoil",
+    "isTraditional": true,
+    "mealType": "Lunch",
+    "ingredients": [
+      {
+        "name": "Fish Fillets / Raw Banana & Yam",
+        "quantity": 400,
+        "unit": "grams",
+        "category": "Protein"
+      },
+      {
+        "name": "Grated Fresh Coconut",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Coconut"
+      },
+      {
+        "name": "Cumin Seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Small Onions",
+        "quantity": 8,
+        "unit": "pieces",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Turmeric Powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Chilli Powder",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Tamarind Pulp",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Condiments"
+      },
+      {
+        "name": "Coconut Oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Oils"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Grind fresh grated coconut, cumin seeds, shallots, and garlic into a smooth fine yellow paste with water."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "In a pot, bring tamarind water, chilli powder, turmeric, salt, and curry leaves to a boil."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add fish pieces (or yam cubes) and cook for 5 minutes."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Stir in ground coconut paste. Simmer gently for 4 minutes. Drizzle raw coconut oil on top before turning off heat."
+      }
+    ],
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 15,
+    "difficulty": "Easy",
+    "servings": 4,
+    "estimatedCostINR": 210,
+    "spiceLevel": 3,
+    "nutritionPerServing": {
+      "calories": 295,
+      "protein": 22,
+      "carbs": 10,
+      "fat": 19,
+      "fiber": 3
+    },
+    "dietaryTags": [
+      "Gluten-Free",
+      "Coastal-Special"
+    ],
+    "requiredEquipment": [
+      "Mixer / Grinder",
+      "Earthen Pot"
+    ],
+    "paatiTip": "Raw unheated coconut oil drizzled at the very end locks in the distinct Kanyakumari coastal fragrance.",
+    "modernVariation": "Coconut Fish Stew with Steamed Appam.",
+    "substitutions": [
+      {
+        "originalIngredient": "Fish Fillets",
+        "substituteIngredient": "Raw Banana & Elephant Yam",
+        "quantityRatio": "1:1 weight ratio",
+        "tasteImpact": "Delicious vegetarian coastal curry",
+        "whenToAdd": "Boil in tamarind water initially"
+      }
+    ],
+    "imageUrl": "assets/recipes/nagercoil-kuzhambu.jpg",
+    "ratings": {
+      "average": 4.8,
+      "count": 27
+    },
+    "image": "assets/recipes/nagercoil-kuzhambu.jpg"
+  },
+  {
+    "name": "Kuzhi Paniyaram with Tomato Kara Chutney",
+    "tamilName": "குழி பணியாரம்",
+    "description": "Crispy outside, soft inside round dumplings made from tempered fermented dosa batter cooked in a traditional cast iron paniyaram pan.",
+    "category": "Snacks",
+    "region": "Chettinad",
+    "isTraditional": true,
+    "mealType": "Snack",
+    "ingredients": [
+      {
+        "name": "Fermented Batter",
+        "quantity": 3,
+        "unit": "cups",
+        "category": "Batter"
+      },
+      {
+        "name": "Finely Chopped Onions",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Green Chillies",
+        "quantity": 3,
+        "unit": "pieces",
+        "category": "Spices"
+      },
+      {
+        "name": "Mustard & Chana Dal",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Curry Leaves & Coriander",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Herbs"
+      },
+      {
+        "name": "Gingelly Oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Oils"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Heat 1 tbsp oil. Temper mustard seeds, chana dal, chopped onions, green chillies, and curry leaves until golden."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mix tempered mixture into sour fermented dosa batter with fresh coriander."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Heat paniyaram cavity pan. Add drops of oil in each cavity and fill 3/4th with batter."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cover with lid and cook for 3 minutes on medium flame. Flip using a wooden skewer and cook until golden brown."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 15,
+    "difficulty": "Easy",
+    "servings": 3,
+    "estimatedCostINR": 55,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 240,
+      "protein": 6,
+      "carbs": 38,
+      "fat": 7,
+      "fiber": 3
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Low-Fat-Option"
+    ],
+    "requiredEquipment": [
+      "Cast Iron Paniyaram Pan",
+      "Wooden Skewer"
+    ],
+    "paatiTip": "Slightly sour 2-day old dosa batter produces the fluffiest paniyarams with crisp golden crusts.",
+    "modernVariation": "Sweet Jaggery & Banana Paniyaram.",
+    "substitutions": [
+      {
+        "originalIngredient": "Gingelly Oil",
+        "substituteIngredient": "Ghee",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Richer festive buttery taste",
+        "whenToAdd": "Drizzle in cavity before pouring batter"
+      }
+    ],
+    "imageUrl": "assets/recipes/paniyaram.jpg",
+    "ratings": {
+      "average": 4.9,
+      "count": 33
+    },
+    "image": "assets/recipes/paniyaram.jpg"
+  },
+  {
+    "name": "Crispy Onion Rava Dosa",
+    "tamilName": "வெங்காய ரவா தோசை",
+    "description": "Lacy instant crepe made with semolina, rice flour, maida, cumin, crushed peppercorns, and loads of finely chopped red onions.",
+    "category": "Breakfast",
+    "region": "Chennai",
+    "isTraditional": true,
+    "mealType": "Breakfast",
+    "ingredients": [
+      {
+        "name": "Rava (Semolina)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Grains"
+      },
+      {
+        "name": "Rice Flour",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Grains"
+      },
+      {
+        "name": "Finely Chopped Red Onions",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Black Peppercorns & Cumin",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Finely Chopped Ginger & Chillies",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Aromatics"
+      },
+      {
+        "name": "Oil / Ghee",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Oils"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mix rava, rice flour, maida, cumin, crushed pepper, ginger, salt, and 3 cups water into a thin buttermilk consistency batter. Rest 15 mins."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Scatter chopped onions on a smoking hot tawa."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pour batter from a height starting from outer boundary towards center to form a net-like lace."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Drizzle oil liberally, cook on medium flame until deep golden crisp without flipping."
+      }
+    ],
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 10,
+    "difficulty": "Medium",
+    "servings": 2,
+    "estimatedCostINR": 60,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 290,
+      "protein": 5,
+      "carbs": 42,
+      "fat": 11,
+      "fiber": 2
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Instant-Breakfast"
+    ],
+    "requiredEquipment": [
+      "Non-stick / Iron Tawa"
+    ],
+    "paatiTip": "Keep the batter watery like thin buttermilk; pour from 6 inches above tawa to create signature porous net holes.",
+    "modernVariation": "Rava Cheese & Mushroom Crepe.",
+    "substitutions": [
+      {
+        "originalIngredient": "Rava (Semolina)",
+        "substituteIngredient": "Oats Flour / Quinoa Flour",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Gluten-free nutrient dense alternative",
+        "whenToAdd": "Mix with rice flour batter"
+      }
+    ],
+    "imageUrl": "assets/recipes/rava-dosa.jpg",
+    "ratings": {
+      "average": 4.7,
+      "count": 21
+    },
+    "image": "assets/recipes/rava-dosa.jpg"
+  },
+  {
+    "name": "Steamed Idiyappam & Sweet Coconut Milk",
+    "tamilName": "இடியாப்பம் தேங்காய்ப்பால்",
+    "description": "Soft delicate string hoppers steamed from roasted rice flour served with cardamom spiced fresh coconut milk.",
+    "category": "Breakfast",
+    "region": "Nagercoil",
+    "isTraditional": true,
+    "mealType": "Breakfast",
+    "ingredients": [
+      {
+        "name": "Idiyappam Flour (Processed Rice)",
+        "quantity": 2,
+        "unit": "cups",
+        "category": "Grains"
+      },
+      {
+        "name": "Hot Boiling Water",
+        "quantity": 1.75,
+        "unit": "cups",
+        "category": "Water"
+      },
+      {
+        "name": "Fresh Coconut Milk",
+        "quantity": 2,
+        "unit": "cups",
+        "category": "Coconut"
+      },
+      {
+        "name": "Cardamom Powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Jaggery / Sugar",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Sweeteners"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mix roasted rice flour with salt and boiling hot water to form a soft non-sticky dough."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fill dough into idiyappam press fitted with fine hole disc."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Squeeze thin noodle nests onto greased idli plates. Steam for 7 minutes."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Serve warm with coconut milk sweetened with jaggery and cardamom."
+      }
+    ],
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 10,
+    "difficulty": "Medium",
+    "servings": 3,
+    "estimatedCostINR": 75,
+    "spiceLevel": 1,
+    "nutritionPerServing": {
+      "calories": 260,
+      "protein": 4,
+      "carbs": 48,
+      "fat": 7,
+      "fiber": 2
+    },
+    "dietaryTags": [
+      "Vegan",
+      "Gluten-Free",
+      "Gentle-Digestive"
+    ],
+    "requiredEquipment": [
+      "Idiyappam Press",
+      "Steamer"
+    ],
+    "paatiTip": "Water must be boiling hot while kneading dough; this cooks the rice starch slightly creating feather-light non-sticky string hoppers.",
+    "modernVariation": "Lemon Garlic Idiyappam Noodle Toss.",
+    "substitutions": [
+      {
+        "originalIngredient": "Coconut Milk",
+        "substituteIngredient": "Vegetable Korma",
+        "quantityRatio": "1 cup Korma",
+        "tasteImpact": "Savory spicy breakfast option",
+        "whenToAdd": "Serve alongside warm Idiyappam"
+      }
+    ],
+    "imageUrl": "assets/recipes/idiyappam.jpg",
+    "ratings": {
+      "average": 4.8,
+      "count": 18
+    },
+    "image": "assets/recipes/idiyappam.jpg"
+  },
+  {
+    "name": "Traditional Keerai Kootu",
+    "tamilName": "கீரை கூட்டு",
+    "description": "Nourishing dish of fresh spinach/amaranth leaves cooked with moong dal, cumin-coconut paste, and ghee tempering.",
+    "category": "Lunch",
+    "region": "Thanjavur",
+    "isTraditional": true,
+    "mealType": "Lunch",
+    "ingredients": [
+      {
+        "name": "Fresh Spinach / Arai Keerai",
+        "quantity": 1,
+        "unit": "bunch",
+        "category": "Greens"
+      },
+      {
+        "name": "Moong Dal",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Pulses"
+      },
+      {
+        "name": "Grated Coconut",
+        "quantity": 0.25,
+        "unit": "cup",
+        "category": "Coconut"
+      },
+      {
+        "name": "Cumin Seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Green Chillies",
+        "quantity": 2,
+        "unit": "pieces",
+        "category": "Spices"
+      },
+      {
+        "name": "Ghee / Coconut Oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Dairy"
+      },
+      {
+        "name": "Mustard & Urad Dal",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Boil moong dal until cooked but holding shape. Chop spinach finely."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Grind grated coconut, cumin seeds, and green chillies into a coarse paste."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Cook greens with 0.25 cup water until wilted. Stir in cooked dal, coconut paste, and salt."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Temper mustard seeds, urad dal, and red chilli in ghee and pour over hot kootu."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 15,
+    "difficulty": "Easy",
+    "servings": 3,
+    "estimatedCostINR": 45,
+    "spiceLevel": 1,
+    "nutritionPerServing": {
+      "calories": 160,
+      "protein": 8,
+      "carbs": 18,
+      "fat": 6,
+      "fiber": 6
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "High-Iron",
+      "Healthy"
+    ],
+    "requiredEquipment": [
+      "Pot",
+      "Tadka Pan"
+    ],
+    "paatiTip": "Do not cover spinach with a lid while boiling; keeping it open retains the vibrant natural green chlorophyll color.",
+    "modernVariation": "Keerai Kootu Buddha Bowl with Brown Rice.",
+    "substitutions": [
+      {
+        "originalIngredient": "Spinach",
+        "substituteIngredient": "Moringa (Murungai) Leaves",
+        "quantityRatio": "1 cup packed leaves",
+        "tasteImpact": "Earthy superfood flavor rich in antioxidants",
+        "whenToAdd": "Cook with moong dal"
+      }
+    ],
+    "imageUrl": "assets/recipes/keerai-kootu.jpg",
+    "ratings": {
+      "average": 4.9,
+      "count": 20
+    },
+    "image": "assets/recipes/keerai-kootu.jpg"
+  },
+  {
+    "name": "Idli Upma (Leftover Transformation)",
+    "tamilName": "இட்லி உப்புமா",
+    "description": "Quick delicious tiffin made by crumbling leftover idlis and tempering with mustard seeds, chana dal, onions, green chillies, turmeric, and fresh curry leaves.",
+    "category": "Breakfast",
+    "region": "All Tamil Nadu",
+    "isTraditional": true,
+    "mealType": "Breakfast",
+    "ingredients": [
+      {
+        "name": "Leftover Idli",
+        "quantity": 6,
+        "unit": "pieces",
+        "category": "Leftover"
+      },
+      {
+        "name": "Onion (Finely Chopped)",
+        "quantity": 1,
+        "unit": "piece",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Green Chillies",
+        "quantity": 2,
+        "unit": "pieces",
+        "category": "Spices"
+      },
+      {
+        "name": "Mustard Seeds & Chana Dal",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Turmeric Powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Curry Leaves & Coriander",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Herbs"
+      },
+      {
+        "name": "Sesame Oil / Ghee",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "category": "Oils"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Condiments"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Crumble leftover cold idlis finely using clean hands."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Heat oil in a wok. Splutter mustard seeds, crunchy chana dal, curry leaves, and chopped chillies."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add onions and turmeric powder; sauté until onions turn translucent."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Toss in crumbled idlis, sprinkle 1 tbsp water, cover and steam 2 mins. Turn off heat and drizzle lemon juice."
+      }
+    ],
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 8,
+    "difficulty": "Easy",
+    "servings": 2,
+    "estimatedCostINR": 30,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 210,
+      "protein": 6,
+      "carbs": 36,
+      "fat": 5,
+      "fiber": 3
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Zero-Waste",
+      "Quick-Meal"
+    ],
+    "requiredEquipment": [
+      "Wok / Pan"
+    ],
+    "paatiTip": "Sprinkle a spoonful of Idli Milagai Podi (gunpowder) into the oil for an extra fragrant spicy kick.",
+    "modernVariation": "Chili Cheese Idli Bites.",
+    "substitutions": [
+      {
+        "originalIngredient": "Lemon Juice",
+        "substituteIngredient": "Raw Mango Powder (Amchur)",
+        "quantityRatio": "0.5 tsp Amchur",
+        "tasteImpact": "Tangy dry spice flavor",
+        "whenToAdd": "Toss along with turmeric"
+      }
+    ],
+    "imageUrl": "assets/recipes/idli-upma.jpg",
+    "ratings": {
+      "average": 4.9,
+      "count": 45
+    },
+    "image": "assets/recipes/idli-upma.jpg"
+  },
+  {
+    "name": "Chapati Kothu (Leftover Transformation)",
+    "tamilName": "சப்பாத்தி கொத்து",
+    "description": "Street-style kothu recipe using leftover chapatis shredded and wok-fried with onions, capsicum, tomatoes, eggs/paneer, and garam masala.",
+    "category": "Snacks",
+    "region": "Chennai",
+    "isTraditional": false,
+    "mealType": "Dinner",
+    "ingredients": [
+      {
+        "name": "Leftover Chapati",
+        "quantity": 4,
+        "unit": "pieces",
+        "category": "Leftover"
+      },
+      {
+        "name": "Eggs / Paneer Cubes",
+        "quantity": 2,
+        "unit": "pieces",
+        "category": "Protein"
+      },
+      {
+        "name": "Onion",
+        "quantity": 1,
+        "unit": "piece",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Capsicum & Tomato",
+        "quantity": 1,
+        "unit": "cup",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Chilli Powder & Garam Masala",
+        "quantity": 1,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Oil",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "category": "Oils"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Cut or tear leftover chapatis into small ribbon strips."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Heat oil in pan. Sauté chopped onions, capsicum, tomatoes, green chillies, and spice powders."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Push veggies to one side, break eggs (or add paneer) and scramble till half done."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Add chapati strips, splash 2 tbsp water or leftover gravy, minced high heat for 3 mins."
+      }
+    ],
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 10,
+    "difficulty": "Easy",
+    "servings": 2,
+    "estimatedCostINR": 45,
+    "spiceLevel": 3,
+    "nutritionPerServing": {
+      "calories": 310,
+      "protein": 12,
+      "carbs": 42,
+      "fat": 10,
+      "fiber": 5
+    },
+    "dietaryTags": [
+      "Zero-Waste",
+      "High-Fiber",
+      "Quick-Dinner"
+    ],
+    "requiredEquipment": [
+      "Flat Skillet"
+    ],
+    "paatiTip": "Sprinkle curry leaves and a splash of leftover sambar or salna while mincing for authentic roadside flavor.",
+    "modernVariation": "Tex-Mex Chapati Tortilla Stir Fry.",
+    "substitutions": [
+      {
+        "originalIngredient": "Leftover Chapati",
+        "substituteIngredient": "Leftover Parotta / Tortilla",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Flakier street style texture",
+        "whenToAdd": "Shred and toss in pan"
+      }
+    ],
+    "imageUrl": "assets/recipes/chapati-kothu.jpg",
+    "ratings": {
+      "average": 4.8,
+      "count": 37
+    },
+    "image": "assets/recipes/chapati-kothu.jpg"
+  },
+  {
+    "name": "Classic Sambar Rice Bowl",
+    "tamilName": "சாம்பார் சாதம்",
+    "description": "Comforting one-pot dish of soft cooked rice and toor dal simmered with vegetables, sambar powder, ghee, and roasted cashews.",
+    "category": "Lunch",
+    "region": "All Tamil Nadu",
+    "isTraditional": true,
+    "mealType": "Lunch",
+    "ingredients": [
+      {
+        "name": "Leftover Cooked Rice / Raw Rice",
+        "quantity": 2,
+        "unit": "cups",
+        "category": "Grains"
+      },
+      {
+        "name": "Toor Dal",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Pulses"
+      },
+      {
+        "name": "Mixed Veg (Carrot, Beans, Drumstick)",
+        "quantity": 1.5,
+        "unit": "cups",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Tamarind Juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Condiments"
+      },
+      {
+        "name": "Sambar Powder",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Ghee",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Dairy"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Cook rice and toor dal together till soft and mushy."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Boil mixed vegetables in tamarind water with sambar powder, salt, and turmeric until tender."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Combine cooked dal-rice mash with vegetable sambar simmer on low heat for 5 mins."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Temper mustard, curry leaves, hing, and cashews in ghee; pour into hot sambar rice."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 20,
+    "difficulty": "Easy",
+    "servings": 3,
+    "estimatedCostINR": 70,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 330,
+      "protein": 10,
+      "carbs": 56,
+      "fat": 7,
+      "fiber": 6
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Comfort-Food"
+    ],
+    "requiredEquipment": [
+      "Pressure Cooker / Pot"
+    ],
+    "paatiTip": "Add a small tablespoon of melted ghee right before eating for peak comforting aroma.",
+    "modernVariation": "Quinoa & Oats Sambar Bowl.",
+    "substitutions": [
+      {
+        "originalIngredient": "Toor Dal",
+        "substituteIngredient": "Moong Dal",
+        "quantityRatio": "1:1 ratio",
+        "tasteImpact": "Cooling digestive lighter sambar rice",
+        "whenToAdd": "Cook with rice"
+      }
+    ],
+    "imageUrl": "assets/recipes/sambar-rice.jpg",
+    "ratings": {
+      "average": 4.9,
+      "count": 40
+    },
+    "image": "assets/recipes/sambar-rice.jpg"
+  },
+  {
+    "name": "Kongu Nadu Ellu Sadam",
+    "tamilName": "கொங்கு நாடு எள்ளu சாதம்",
+    "description": "Fragrant roasted sesame rice specialty from the Kongu Nadu agricultural heartland, infused with gingelly oil, red chillies and fresh curry leaves.",
+    "category": "Regional",
+    "region": "Kongu Nadu",
+    "isTraditional": true,
+    "classification": "Traditional",
+    "mealType": "Lunch",
+    "ingredients": [
+      {
+        "name": "Cooked Ponni Rice",
+        "quantity": 3,
+        "unit": "cups",
+        "category": "Grains"
+      },
+      {
+        "name": "White Sesame Seeds",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Gingelly Oil (Nallennai)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Dairy & Oils"
+      },
+      {
+        "name": "Dry Red Chillies",
+        "quantity": 3,
+        "unit": "pieces",
+        "category": "Spices"
+      },
+      {
+        "name": "Curry Leaves",
+        "quantity": 10,
+        "unit": "leaves",
+        "category": "Herbs"
+      },
+      {
+        "name": "Mustard Seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Chana Dal",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Pulses"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dry roast white sesame seeds on low heat until aromatic and popping."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Roast dry red chillies and grind with sesame seeds and rock salt into a coarse powder."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Heat gingelly oil, splutter mustard seeds, chana dal and curry leaves."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mix the fragrant sesame spice powder and tempering thoroughly into warm cooked rice."
+      }
+    ],
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 15,
+    "difficulty": "Easy",
+    "servings": 4,
+    "estimatedCostINR": 65,
+    "spiceLevel": 2,
+    "nutritionPerServing": {
+      "calories": 310,
+      "protein": 7,
+      "carbs": 48,
+      "fat": 10,
+      "fiber": 4
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Vegan",
+      "Gluten-Free"
+    ],
+    "requiredEquipment": [
+      "Kadai / Wok",
+      "Mixer Grinder"
+    ],
+    "paatiTip": "Always dry roast sesame on the lowest flame. Overheating makes it bitter.",
+    "modernVariation": "Toss with roasted peanuts or cashews for added crunch.",
+    "substitutions": [
+      {
+        "originalIngredient": "Gingelly Oil",
+        "substituteIngredient": "Ghee",
+        "quantityRatio": "1:1",
+        "tasteImpact": "Richer buttery profile",
+        "whenToAdd": "During tempering"
+      }
+    ],
+    "image": "assets/recipes/ellu-sadam.jpg",
+    "imageUrl": "assets/recipes/ellu-sadam.jpg",
+    "ratings": {
+      "average": 4.8,
+      "count": 19
+    }
+  },
+  {
+    "name": "Chettinad Poondu Kuzhambu",
+    "tamilName": "செட்டிநாடு பூண்டு குழம்பு",
+    "description": "Fiery, tangy, and deeply aromatic garlic curry slow-simmered in a clay pot with whole pearl garlic cloves, tamarind pulp, and roasted Chettinad spices.",
+    "category": "Lunch",
+    "region": "Chettinad",
+    "isTraditional": true,
+    "classification": "Traditional",
+    "mealType": "Lunch",
+    "ingredients": [
+      {
+        "name": "Garlic Cloves (Peeled)",
+        "quantity": 25,
+        "unit": "cloves",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Shallots (Small Onions)",
+        "quantity": 15,
+        "unit": "pieces",
+        "category": "Vegetables"
+      },
+      {
+        "name": "Tamarind Extract",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Condiments"
+      },
+      {
+        "name": "Sesame Oil (Gingelly)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "category": "Dairy & Oils"
+      },
+      {
+        "name": "Kuzhambu Milagai Podi",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Fenugreek Seeds",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "category": "Spices"
+      },
+      {
+        "name": "Curry Leaves",
+        "quantity": 12,
+        "unit": "leaves",
+        "category": "Herbs"
+      },
+      {
+        "name": "Tomatoes",
+        "quantity": 2,
+        "unit": "pieces",
+        "category": "Vegetables"
+      }
+    ],
+    "instructions": [
+      {
+        "stepNumber": 1,
+        "instruction": "Heat generous gingelly oil in a clay pot (manpaanai); splutter mustard, fenugreek, and curry leaves."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sauté shallots and whole garlic cloves until golden and tender."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add chopped tomatoes and kuzhambu masala powder; cook until oil releases."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pour tamarind extract with 1.5 cups water and simmer on medium flame until thick and oil floats on top."
+      }
+    ],
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 25,
+    "difficulty": "Medium",
+    "servings": 4,
+    "estimatedCostINR": 80,
+    "spiceLevel": 3,
+    "nutritionPerServing": {
+      "calories": 175,
+      "protein": 4,
+      "carbs": 22,
+      "fat": 8,
+      "fiber": 4
+    },
+    "dietaryTags": [
+      "Vegetarian",
+      "Vegan",
+      "Gluten-Free"
+    ],
+    "requiredEquipment": [
+      "Clay Pot / Heavy Kadai"
+    ],
+    "paatiTip": "Cook in a traditional earthenware pot (manpaanai) and allow it to rest for 3 hours before serving for deepest flavor.",
+    "modernVariation": "Add shallow-fried tofu cubes for protein boost.",
+    "substitutions": [
+      {
+        "originalIngredient": "Kuzhambu Milagai Podi",
+        "substituteIngredient": "Sambar Powder + Kashmiri Chilli",
+        "quantityRatio": "1:1",
+        "tasteImpact": "Similar spicy tangy profile",
+        "whenToAdd": "During sautéing"
+      }
+    ],
+    "image": "assets/recipes/poondu-kuzhambu.jpg",
+    "imageUrl": "assets/recipes/poondu-kuzhambu.jpg",
+    "ratings": {
+      "average": 4.9,
+      "count": 32
+    }
+  }
+]

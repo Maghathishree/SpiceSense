@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="spiceSenseApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpiceSense – Smart South Indian Recipe & Nutrition Assistant</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover authentic Tamil Nadu recipes, transform leftovers into delicious meals with Leftover Lab, calculate nutrition dynamically, and cook under budget.">
+  <meta name="keywords" content="Tamil Nadu recipes, South Indian cooking, Leftover Lab, Nutrition Assistant, Chettinad, Madurai cuisine, AngularJS application">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#!/" class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-pepper-hot"></i>
+        </div>
+        <div>
+          <span>Spice</span><span class="highlight">Sense</span>
+        </div>
+      </a>
+
+      <!-- Hamburger for mobile -->
+      <button class="nav-hamburger" onclick="this.closest('header').querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#!/" ng-class="{'active': currentPath === '/'}"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#!/recipes" ng-class="{'active': currentPath === '/recipes'}"><i class="fa-solid fa-book-open"></i> Recipes</a></li>
+        <li><a href="#!/community-kitchen" ng-class="{'active': currentPath === '/community-kitchen'}"><i class="fa-solid fa-users"></i> Community</a></li>
+        <li><a href="#!/taste-rescue" class="nav-highlight-red" ng-class="{'active': currentPath === '/taste-rescue'}"><i class="fa-solid fa-kit-medical"></i> Taste Rescue</a></li>
+        <li><a href="#!/leftover-lab" class="nav-highlight" ng-class="{'active': currentPath === '/leftover-lab'}"><i class="fa-solid fa-flask"></i> Leftover Lab</a></li>
+        <li><a href="#!/what-can-i-cook" ng-class="{'active': currentPath === '/what-can-i-cook'}"><i class="fa-solid fa-kitchen-set"></i> Can I Cook?</a></li>
+        <li><a href="#!/regional-explorer" ng-class="{'active': currentPath === '/regional-explorer'}"><i class="fa-solid fa-map-location-dot"></i> Regional</a></li>
+        <li><a href="#!/budget-mode" ng-class="{'active': currentPath === '/budget-mode'}"><i class="fa-solid fa-wallet"></i> Budget</a></li>
+        <li><a href="#!/shopping-list" ng-class="{'active': currentPath === '/shopping-list'}"><i class="fa-solid fa-cart-shopping"></i> Shopping</a></li>
+      </ul>
+
+      <div class="user-nav-actions">
+        <a href="#!/add-recipe" ng-if="isLoggedIn" class="btn btn-sm btn-primary" style="font-weight: 700; font-size: 0.8rem;">
+          <i class="fa-solid fa-plus-circle"></i> + Add
+        </a>
+        <a href="#!/my-recipes" ng-if="isLoggedIn" class="btn btn-sm btn-outline" style="border-color: #93C5FD; color: #FFFFFF; font-size: 0.8rem;">
+          <i class="fa-solid fa-folder-open"></i>
+        </a>
+        <a href="#!/dashboard" ng-if="isLoggedIn" class="btn btn-sm btn-outline" style="border-color: #CBD5E1; color: #FFFFFF; font-size: 0.8rem;">
+          <i class="fa-solid fa-gauge-high"></i>
+        </a>
+        <button ng-if="isLoggedIn" ng-click="logout()" class="btn btn-sm btn-secondary" style="font-size: 0.8rem;">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+
+        <a href="#!/login" ng-if="!isLoggedIn" class="btn btn-sm btn-outline" style="border-color: var(--primary); color: var(--primary); font-size: 0.8rem;">
+          Login
+        </a>
+        <a href="#!/register" ng-if="!isLoggedIn" class="btn btn-sm btn-primary" style="font-size: 0.8rem;">
+          Register
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Route View Container (AngularJS ng-view) -->
+  <main class="app-viewport container" style="margin-top: 2rem;">
+    <div ng-view class="view-animate"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4><i class="fa-solid fa-pepper-hot" style="color: var(--primary);"></i> SpiceSense Assistant</h4>
+          <p style="font-size: 0.9rem; margin-top: 0.5rem; line-height: 1.6;">
+            A Smart South Indian Recipe & Nutrition Assistant dedicated to Tamil Nadu cuisine. Turn leftovers into gourmet dishes, track calories dynamically, and explore traditional culinary heritage.
+          </p>
+        </div>
+        <div>
+          <h4>Quick Features</h4>
+          <ul>
+            <li><a href="#!/leftover-lab">Leftover Lab Transformation</a></li>
+            <li><a href="#!/what-can-i-cook">What Can I Cook? Finder</a></li>
+            <li><a href="#!/nutrition-calculator">Dynamic Calorie Calculator</a></li>
+            <li><a href="#!/budget-mode">Cook Under My Budget</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tamil Culinary Regions</h4>
+          <ul>
+            <li><a href="#!/regional-explorer?region=Chettinad">Chettinad Specialties</a></li>
+            <li><a href="#!/regional-explorer?region=Madurai">Madurai Street Flavors</a></li>
+            <li><a href="#!/regional-explorer?region=Tirunelveli">Tirunelveli Halwa & Sodhi</a></li>
+            <li><a href="#!/regional-explorer?region=Kongu Nadu">Kongu Arisi Paruppu Sadam</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Academic Stack</h4>
+          <p style="font-size: 0.85rem; color: #CBD5E1;">
+            HTML5 • CSS3 • JavaScript<br>
+            AngularJS 1.8.2 SPA<br>
+            Node.js • Express.js • MongoDB<br>
+            Mongoose ODM
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SpiceSense – Smart South Indian Recipe & Nutrition Assistant. B.Tech Web Technology Academic Project.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AngularJS Core Libraries CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+
+  <!-- App Core Modules & Routing -->
+  <script src="js/app.module.js"></script>
+  <script src="js/app.routes.js"></script>
+
+  <!-- AngularJS Services -->
+  <script src="js/services/recipeService.js"></script>
+  <script src="js/services/tasteRescueService.js"></script>
+  <script src="js/services/nutritionService.js"></script>
+  <script src="js/services/ingredientService.js"></script>
+  <script src="js/services/leftoverService.js"></script>
+  <script src="js/services/shoppingService.js"></script>
+  <script src="js/services/budgetService.js"></script>
+  <script src="js/services/authService.js"></script>
+  <script src="js/services/storageService.js"></script>
+
+  <!-- AngularJS Custom Filters -->
+  <script src="js/filters/spiceFilter.js"></script>
+  <script src="js/filters/mealFilter.js"></script>
+  <script src="js/filters/dietFilter.js"></script>
+  <script src="js/filters/regionFilter.js"></script>
+  <script src="js/filters/calorieFilter.js"></script>
+  <script src="js/filters/formatCurrency.js"></script>
+
+  <!-- AngularJS Custom Directives -->
+  <script src="js/directives/recipeCard.js"></script>
+  <script src="js/directives/nutritionCard.js"></script>
+  <script src="js/directives/ingredientSelector.js"></script>
+  <script src="js/directives/ingredientInput.js"></script>
+  <script src="js/directives/spiceMeter.js"></script>
+  <script src="js/directives/leftoverCard.js"></script>
+  <script src="js/directives/paatiTip.js"></script>
+
+  <!-- AngularJS Controllers -->
+  <script src="js/controllers/homeController.js"></script>
+  <script src="js/controllers/recipeController.js"></script>
+  <script src="js/controllers/recipeDetailController.js"></script>
+  <script src="js/controllers/leftoverController.js"></script>
+  <script src="js/controllers/whatCanICookController.js"></script>
+  <script src="js/controllers/nutritionController.js"></script>
+  <script src="js/controllers/budgetController.js"></script>
+  <script src="js/controllers/regionalController.js"></script>
+  <script src="js/controllers/shoppingController.js"></script>
+  <script src="js/controllers/authController.js"></script>
+  <script src="js/controllers/dashboardController.js"></script>
+  <script src="js/controllers/addRecipeController.js"></script>
+  <script src="js/controllers/myRecipesController.js"></script>
+  <script src="js/controllers/communityRecipeController.js"></script>
+  <script src="js/controllers/tasteRescueController.js"></script>
+
+</body>
+</html>
